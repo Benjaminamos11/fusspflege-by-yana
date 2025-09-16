@@ -1,0 +1,9 @@
+# After creating your GitHub repository, run these commands:
+
+# Replace YOUR_GITHUB_USERNAME with your actual GitHub username
+git remote add origin https://github.com/YOUR_GITHUB_USERNAME/fusspflege-by-yana.git
+git push -u origin main
+
+# Example (if your username was 'benjaminwagner'):
+# git remote add origin https://github.com/benjaminwagner/fusspflege-by-yana.git
+# git push -u origin main

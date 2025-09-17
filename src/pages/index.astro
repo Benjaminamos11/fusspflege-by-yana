@@ -795,10 +795,14 @@ import Layout from '../layouts/Layout.astro';
   <script>
     // Custom Instagram Feed Integration
     class InstagramFeed {
+      username: string;
+      container: HTMLElement | null;
+      loadingElement: HTMLElement | null;
+      
       constructor() {
         this.username = 'fusspflege_by_yana';
         this.container = document.getElementById('instagram-feed');
-        this.loadingElement = document.querySelector('.instagram-loading');
+        this.loadingElement = document.querySelector('.instagram-loading') as HTMLElement;
         this.init();
       }
 
@@ -848,14 +852,14 @@ import Layout from '../layouts/Layout.astro';
         this.renderPhotos(instagramPosts);
       }
 
-      renderPhotos(photos) {
+      renderPhotos(photos: any[]) {
         // Remove loading indicator
         if (this.loadingElement) {
           this.loadingElement.remove();
         }
 
         // Create photo elements
-        photos.forEach((photo, index) => {
+        photos.forEach((photo: any, index: number) => {
           const photoElement = document.createElement('a');
           photoElement.href = photo.link;
           photoElement.target = '_blank';
@@ -874,7 +878,9 @@ import Layout from '../layouts/Layout.astro';
           };
 
           photoElement.appendChild(img);
-          this.container.appendChild(photoElement);
+          if (this.container) {
+            this.container.appendChild(photoElement);
+          }
         });
 
         // Add fade-in animation
@@ -882,17 +888,19 @@ import Layout from '../layouts/Layout.astro';
       }
 
       addFadeInAnimation() {
-        const photos = this.container.querySelectorAll('.instagram-photo');
-        photos.forEach((photo, index) => {
-          photo.style.opacity = '0';
-          photo.style.transform = 'translateY(20px)';
-          
-          setTimeout(() => {
-            photo.style.transition = 'all 0.6s ease-out';
-            photo.style.opacity = '1';
-            photo.style.transform = 'translateY(0)';
-          }, index * 100);
-        });
+        if (this.container) {
+          const photos = this.container.querySelectorAll('.instagram-photo') as NodeListOf<HTMLElement>;
+          photos.forEach((photo: HTMLElement, index: number) => {
+            photo.style.opacity = '0';
+            photo.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+              photo.style.transition = 'all 0.6s ease-out';
+              photo.style.opacity = '1';
+              photo.style.transform = 'translateY(0)';
+            }, index * 100);
+          });
+        }
       }
 
       showError() {
@@ -946,11 +954,15 @@ import Layout from '../layouts/Layout.astro';
       function updateActiveNavPill() {
         let currentSection = '';
         
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.clientHeight;
+        sections.forEach((section) => {
+          const htmlSection = section as HTMLElement;
+          const sectionTop = htmlSection.offsetTop;
+          const sectionHeight = htmlSection.clientHeight;
           if (window.pageYOffset >= sectionTop - 200) {
-            currentSection = section.getAttribute('id');
+            const sectionId = section.getAttribute('id');
+            if (sectionId) {
+              currentSection = sectionId;
+            }
           }
         });
 
@@ -1004,31 +1016,33 @@ import Layout from '../layouts/Layout.astro';
         reviewsAnimated = true;
 
         reviewCards.forEach((card) => {
+          const htmlCard = card as HTMLElement;
           const delay = parseInt(card.getAttribute('data-delay') || '0');
           
           setTimeout(() => {
             // Animate in: remove opacity-0 and translate-y-8, add final transform
-            card.style.opacity = '1';
-            card.style.transform = card.style.transform.replace('translateY(8px)', 'translateY(0px)');
+            htmlCard.style.opacity = '1';
+            htmlCard.style.transform = htmlCard.style.transform.replace('translateY(8px)', 'translateY(0px)');
             
             // Add hover effects
             card.addEventListener('mouseenter', () => {
-              const currentTransform = card.style.transform;
+              const currentTransform = htmlCard.style.transform;
               const scale = 'scale(1.05)';
               
               // Add subtle forward tilt and scale
               if (!currentTransform.includes('scale')) {
-                card.style.transform = currentTransform + ' ' + scale;
+                htmlCard.style.transform = currentTransform + ' ' + scale;
               }
-              card.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-              card.style.zIndex = '10';
+              htmlCard.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+              htmlCard.style.zIndex = '10';
             });
             
             card.addEventListener('mouseleave', () => {
               // Remove scale and reset z-index
-              card.style.transform = card.style.transform.replace(' scale(1.05)', '');
-              card.style.zIndex = card.getAttribute('style')?.includes('z-index: 3') ? '3' : 
-                                 card.getAttribute('style')?.includes('z-index: 2') ? '2' : '1';
+              htmlCard.style.transform = htmlCard.style.transform.replace(' scale(1.05)', '');
+              const styleAttr = card.getAttribute('style');
+              htmlCard.style.zIndex = styleAttr?.includes('z-index: 3') ? '3' : 
+                                     styleAttr?.includes('z-index: 2') ? '2' : '1';
             });
           }, delay);
         });

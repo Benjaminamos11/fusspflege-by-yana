@@ -105,12 +105,13 @@ const { title, description = "Professionelle Fusspflege und Maniküre in einer e
 
     <script>
       // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      const anchorLinks = document.querySelectorAll('a[href^="#"]') as NodeListOf<HTMLAnchorElement>;
+      anchorLinks.forEach((anchor) => {
         anchor.addEventListener('click', function (e: Event) {
           e.preventDefault();
           const element = e.currentTarget as HTMLAnchorElement;
           const href = element.getAttribute('href');
-          const target = href ? document.querySelector(href) : null;
+          const target = href ? document.querySelector(href) as HTMLElement : null;
           if (target) {
             target.scrollIntoView({
               behavior: 'smooth',
@@ -136,8 +137,8 @@ const { title, description = "Professionelle Fusspflege und Maniküre in einer e
 
       // Observe all sections with fade-in-section class
       document.addEventListener('DOMContentLoaded', () => {
-        const fadeInSections = document.querySelectorAll('.fade-in-section');
-        fadeInSections.forEach(section => observer.observe(section));
+        const fadeInSections = document.querySelectorAll('.fade-in-section') as NodeListOf<HTMLElement>;
+        fadeInSections.forEach((section) => observer.observe(section));
       });
     </script>
   </body>

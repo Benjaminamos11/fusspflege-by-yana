@@ -210,18 +210,21 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- White Gap -->
+  <div class="bg-white py-8 sm:py-12 lg:py-16"></div>
+
   <!-- About Section -->
   <section id="about" class="relative py-20 lg:py-32 fade-in-section overflow-hidden">
     <!-- Background Image -->
     <div class="absolute inset-0">
       <picture>
-        <source srcset="https://res.cloudinary.com/dihw9b8ce/image/upload/f_webp,q_auto/v1758101182/a-photograph-showcasing-a-minimalist-sti_U2cQihDDQ6ysedStCVj6ww_TGjIYD_ETBC_OzPCiMdjpQ_kjyy9r.webp" type="image/webp">
-        <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/v1758101182/a-photograph-showcasing-a-minimalist-sti_U2cQihDDQ6ysedStCVj6ww_TGjIYD_ETBC_OzPCiMdjpQ_kjyy9r.png" 
-             alt="Minimalist studio background" 
+        <source srcset="https://res.cloudinary.com/dihw9b8ce/image/upload/f_webp,q_auto/v1758118278/IMG_9174_avqbll.jpg" type="image/webp">
+        <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/v1758118278/IMG_9174_avqbll.jpg" 
+             alt="Team background" 
              class="w-full h-full object-cover">
       </picture>
       <!-- Light overlay for better text readability -->
-      <div class="absolute inset-0 bg-white/60"></div>
+      <div class="absolute inset-0 bg-white/70 backdrop-blur-sm"></div>
     </div>
     
     <!-- Content with relative positioning -->
@@ -244,7 +247,7 @@ import Layout from '../layouts/Layout.astro';
           <!-- Jana/Yana Otto - First -->
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <!-- About Content -->
-            <div class="order-1 lg:order-1">
+            <div class="order-1 lg:order-2">
               <div class="prose prose-lg max-w-none">
                 <h3 class="font-montserrat text-2xl sm:text-3xl font-bold text-text mb-4 sm:mb-6">Yana Otto</h3>
                 <p class="text-orange-500 font-semibold mb-4">Inhaberin & Fusspflegerin</p>
@@ -278,7 +281,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
             
             <!-- Portrait -->
-            <div class="order-2 lg:order-2 flex justify-center items-start">
+            <div class="order-2 lg:order-1 flex justify-center items-start">
               <div class="aspect-square rounded-2xl shadow-lg overflow-hidden max-w-lg">
                 <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/v1758103788/78f05f94-a962-4cf6-8658-47edeb543d70_1_rlqujg.avif" 
                      alt="Yana Otto - Inhaberin und Fusspflegerin" 
@@ -291,7 +294,7 @@ import Layout from '../layouts/Layout.astro';
           <!-- Ana Fingert - Second -->
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <!-- Portrait -->
-            <div class="order-1 lg:order-1">
+            <div class="order-2 lg:order-2">
               <div class="aspect-square rounded-2xl shadow-lg overflow-hidden">
                 <img src="https://static.wixstatic.com/media/a3b5c0_0c22863d4d2d4781ad0d710a900f1fb5~mv2.jpeg/v1/fill/w_566,h_726,fp_0.46_0.36,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Iana%20Fingert.jpeg" 
                      alt="Ana Fingert - Fusspflegerin" 
@@ -300,7 +303,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
             
             <!-- About Content -->
-            <div class="order-2 lg:order-2">
+            <div class="order-1 lg:order-1">
               <div class="prose prose-lg max-w-none">
                 <h3 class="font-montserrat text-2xl sm:text-3xl font-bold text-text mb-4 sm:mb-6">Ana Fingert</h3>
                 <p class="text-orange-500 font-semibold mb-4">Fusspflegerin</p>
@@ -335,6 +338,9 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </section>
+
+  <!-- White Gap -->
+  <div class="bg-white py-8 sm:py-12 lg:py-16"></div>
 
   <!-- Fan-Style Reviews Section -->
   <section id="reviews" class="py-20 lg:py-32 fade-in-section relative">
@@ -491,6 +497,8 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- White Gap -->
+  <div class="bg-white py-8 sm:py-12 lg:py-16"></div>
 
   <!-- Contact & Booking Section -->
   <section id="contact" class="py-20 lg:py-32 bg-white fade-in-section">
@@ -665,8 +673,17 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- Footer -->
   <footer class="bg-orange-200 py-20 relative overflow-hidden">
-    <!-- 3D Background Effect -->
-    <div class="absolute inset-0 bg-gradient-to-br from-orange-100 via-orange-200 to-orange-300"></div>
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <picture>
+        <source srcset="https://res.cloudinary.com/dihw9b8ce/image/upload/f_webp,q_auto/v1758118278/IMG_9174_avqbll.jpg" type="image/webp">
+        <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/v1758118278/IMG_9174_avqbll.jpg" 
+             alt="Footer background" 
+             class="w-full h-full object-cover">
+      </picture>
+      <!-- Orange overlay to maintain footer styling -->
+      <div class="absolute inset-0 bg-orange-200/80"></div>
+    </div>
     
     <!-- Main Footer Content -->
     <div class="relative">

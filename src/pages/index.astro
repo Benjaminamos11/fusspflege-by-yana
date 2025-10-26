@@ -10,14 +10,21 @@ import Layout from '../layouts/Layout.astro';
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
   <!-- Performance: Font preloading and optimization -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" as="style">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap" as="style">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap"></noscript>
   
   <!-- Critical CSS - Inline above the fold styles -->
   <style>
-    /* Core font fallbacks to prevent layout shift */
-    body { font-family: 'Montserrat', system-ui, -apple-system, sans-serif; }
+    /* Core Swiss typography with fallbacks */
+    body { 
+      font-family: 'Inter', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    }
+    
+    /* Swiss font classes */
+    .font-swiss-display { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .font-swiss-body { font-family: 'Source Sans Pro', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
     
     /* Animation optimization */
     .fade-in-section { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
@@ -114,18 +121,18 @@ import Layout from '../layouts/Layout.astro';
     <!-- Hero Content -->
     <div class="absolute inset-0 z-10 flex items-center sm:items-end pb-6 sm:pb-8 md:pb-12">
       <div class="px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 w-full max-w-4xl text-center sm:text-left">
-        <h1 class="text-xl xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black tracking-wide sm:tracking-widest mb-3 sm:mb-6 md:mb-8 animate-fade-in-up text-white leading-tight" style="font-family: 'Impact', 'Arial Black', sans-serif; text-transform: uppercase; letter-spacing: 0.05em;">
+        <h1 class="font-swiss-display text-xl xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black tracking-wide sm:tracking-wider mb-3 sm:mb-6 md:mb-8 animate-fade-in-up text-white leading-tight" style="text-transform: uppercase; letter-spacing: 0.02em; font-weight: 800;">
           Perfektion von den Händen bis zu den Zehen für <span class="text-orange-500">Mann und Frau</span>
         </h1>
       
-        <p class="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-normal mb-4 sm:mb-8 md:mb-12 animate-fade-in-up text-white/95 leading-relaxed max-w-2xl mx-auto sm:mx-0" style="animation-delay: 0.2s; font-family: 'Courier New', 'Monaco', monospace;">
+        <p class="font-swiss-body text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-light mb-4 sm:mb-8 md:mb-12 animate-fade-in-up text-white/95 leading-relaxed max-w-2xl mx-auto sm:mx-0" style="animation-delay: 0.2s; font-weight: 300; letter-spacing: 0.01em;">
           Von der ersten Berührung bis zum letzten Schliff – bei uns steht Hygiene an erster Stelle.<br class="hidden sm:block">
           <span class="block sm:inline mt-1 sm:mt-0">Gönnen Sie sich Fusspflege und Maniküre auf höchstem Niveau – in wohltuender Atmosphäre.</span>
         </p>
       
         <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
            target="_blank"
-           class="btn-primary inline-block bg-white hover:bg-orange-50 text-orange-500 font-montserrat font-medium text-xs xs:text-sm sm:text-base px-4 xs:px-6 sm:px-8 py-2 xs:py-3 sm:py-4 rounded-full transition-all duration-300 animate-fade-in-up border border-orange-500 hover:border-2 hover:border-orange-600 shadow-lg"
+           class="btn-primary inline-block bg-white hover:bg-orange-50 text-orange-500 font-swiss-body font-medium text-xs xs:text-sm sm:text-base px-4 xs:px-6 sm:px-8 py-2 xs:py-3 sm:py-4 rounded-full transition-all duration-300 animate-fade-in-up border border-orange-500 hover:border-2 hover:border-orange-600 shadow-lg"
            style="animation-delay: 0.4s;">
           Jetzt Termin buchen
         </a>
@@ -156,7 +163,7 @@ import Layout from '../layouts/Layout.astro';
           
           <!-- Heading -->
           <div class="mb-12">
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-widest mb-6 text-gray-900 leading-none" style="font-family: 'Impact', 'Arial Black', sans-serif; text-transform: uppercase; letter-spacing: 0.15em;">
+            <h2 class="font-swiss-display text-3xl sm:text-4xl lg:text-5xl font-black tracking-wider mb-6 text-gray-900 leading-none" style="text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800;">
               Ihre Sicherheit liegt mir am Herzen
             </h2>
             <div class="w-24 h-1 bg-orange-500 mx-auto"></div>
@@ -266,7 +273,7 @@ import Layout from '../layouts/Layout.astro';
   <section id="services" class="py-20 lg:py-32 bg-white fade-in-section">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-widest mb-6 text-black leading-none" style="font-family: 'Impact', 'Arial Black', sans-serif; text-transform: uppercase; letter-spacing: 0.15em;">
+        <h2 class="font-swiss-display text-3xl sm:text-4xl lg:text-5xl font-black tracking-wider mb-6 text-black leading-none" style="text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800;">
           Unsere Behandlungen
         </h2>
         <div class="w-24 h-1 bg-orange-500 mx-auto"></div>
@@ -294,7 +301,7 @@ import Layout from '../layouts/Layout.astro';
           <!-- Content overlay -->
           <div class="relative z-10 p-4 sm:p-6 md:p-8 h-full flex flex-col justify-between min-h-[400px] sm:min-h-[500px] md:min-h-[580px]">
             <div>
-              <h3 class="font-montserrat text-2xl font-bold text-white mb-4">Fusspflege</h3>
+              <h3 class="font-swiss-display text-2xl font-bold text-white mb-4">Fusspflege</h3>
               <p class="text-white/90 mb-6 leading-relaxed">
               Gönnen Sie Ihren Füssen eine rundum gepflegte Auszeit – für Schönheit, Gesundheit und Wohlbefinden.
             </p>
@@ -350,7 +357,7 @@ import Layout from '../layouts/Layout.astro';
           <!-- Content overlay -->
           <div class="relative z-10 p-4 sm:p-6 md:p-8 h-full flex flex-col justify-between min-h-[400px] sm:min-h-[500px] md:min-h-[580px]">
             <div>
-              <h3 class="font-montserrat text-2xl font-bold text-white mb-4">Maniküre</h3>
+              <h3 class="font-swiss-display text-2xl font-bold text-white mb-4">Maniküre</h3>
               <p class="text-white/90 mb-6 leading-relaxed">
               Nehmen Sie sich eine Auszeit – für gepflegte Hände und Ihr persönliches Wohlbefinden.
             </p>
@@ -429,11 +436,11 @@ import Layout from '../layouts/Layout.astro';
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-widest mb-6 text-black leading-none" style="font-family: 'Impact', 'Arial Black', sans-serif; text-transform: uppercase; letter-spacing: 0.15em;">
+          <h2 class="font-swiss-display text-3xl sm:text-4xl lg:text-5xl font-black tracking-wider mb-6 text-black leading-none" style="text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800;">
             Unser Team
           </h2>
           <div class="w-24 h-1 bg-orange-500 mx-auto"></div>
-          <p class="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal mt-6 max-w-2xl mx-auto text-gray-700 leading-relaxed tracking-wide" style="font-family: 'Courier New', 'Monaco', monospace;">
+          <p class="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal mt-6 max-w-2xl mx-auto text-gray-700 leading-relaxed tracking-wide" style="font-weight: 300; letter-spacing: 0.005em;">
             Lernen Sie die Personen kennen, die hinter FUSSPFLEGE BY YANA stehen, und mit Leidenschaft, Erfahrung und Liebe zum Detail für Sie arbeiten.
           </p>
         </div>
@@ -446,8 +453,8 @@ import Layout from '../layouts/Layout.astro';
             <!-- About Content -->
             <div class="order-1 lg:order-2">
               <div class="prose prose-lg max-w-none">
-                <h3 class="font-montserrat text-2xl sm:text-3xl font-bold text-text mb-4 sm:mb-6">Yana Otto</h3>
-                <p class="text-orange-500 font-semibold mb-4">Inhaberin & Fusspflegerin</p>
+                <h3 class="font-swiss-display text-2xl sm:text-3xl font-bold text-text mb-4 sm:mb-6">Yana Otto</h3>
+                <p class="text-orange-500 font-semibold mb-4">Inhaberin & Nageldesignerin</p>
                 
                 <p class="text-text-light text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
                   Mein Name ist Yana – seit über 10 Jahren widme ich mich mit Leidenschaft der professionellen 
@@ -470,7 +477,7 @@ import Layout from '../layouts/Layout.astro';
                   Ich freue mich, Sie bei Fusspflege by Yana begrüssen zu dürfen.
                 </p>
                 
-                <p class="text-orange-500 text-lg font-montserrat font-medium mt-4">
+                <p class="text-orange-500 text-lg font-swiss-body font-medium mt-4">
                   Liebe Grüsse<br>
                   Yana
                 </p>
@@ -506,7 +513,7 @@ import Layout from '../layouts/Layout.astro';
                      srcset="https://static.wixstatic.com/media/a3b5c0_0c22863d4d2d4781ad0d710a900f1fb5~mv2.jpeg/v1/fill/w_380,h_380,fp_0.46_0.36,q_auto,f_webp/Iana%20Fingert.jpeg 380w,
                              https://static.wixstatic.com/media/a3b5c0_0c22863d4d2d4781ad0d710a900f1fb5~mv2.jpeg/v1/fill/w_487,h_487,fp_0.46_0.36,q_auto,f_webp/Iana%20Fingert.jpeg 487w"
                      sizes="(max-width: 768px) 380px, 487px"
-                     alt="Ana Fingert - Fusspflegerin" 
+                     alt="Ana Fingert - Nageldesignerin" 
                      width="487"
                      height="487" 
                      loading="lazy"
@@ -517,8 +524,8 @@ import Layout from '../layouts/Layout.astro';
             <!-- About Content -->
             <div class="order-1 lg:order-1">
               <div class="prose prose-lg max-w-none">
-                <h3 class="font-montserrat text-2xl sm:text-3xl font-bold text-text mb-4 sm:mb-6">Ana Fingert</h3>
-                <p class="text-orange-500 font-semibold mb-4">Fusspflegerin</p>
+                <h3 class="font-swiss-display text-2xl sm:text-3xl font-bold text-text mb-4 sm:mb-6">Ana Fingert</h3>
+                <p class="text-orange-500 font-semibold mb-4">Nageldesignerin</p>
                 
                 <p class="text-text-light text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
                   Ana ist ein geschätztes Mitglied unseres Teams und bringt ihre Expertise und 
@@ -574,11 +581,11 @@ import Layout from '../layouts/Layout.astro';
     </div>
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center mb-20">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-widest mb-6 text-black leading-none" style="font-family: 'Impact', 'Arial Black', sans-serif; text-transform: uppercase; letter-spacing: 0.15em;">
+        <h2 class="font-swiss-display text-3xl sm:text-4xl lg:text-5xl font-black tracking-wider mb-6 text-black leading-none" style="text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800;">
           Kundenbewertungen
         </h2>
         <div class="w-24 h-1 bg-orange-500 mx-auto"></div>
-        <p class="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal mt-6 max-w-2xl mx-auto text-gray-700 leading-relaxed tracking-wide" style="font-family: 'Courier New', 'Monaco', monospace;">
+        <p class="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal mt-6 max-w-2xl mx-auto text-gray-700 leading-relaxed tracking-wide" style="font-weight: 300; letter-spacing: 0.005em;">
           Erfahrungen unserer zufriedenen Kunden
         </p>
       </div>
@@ -600,7 +607,7 @@ import Layout from '../layouts/Layout.astro';
                   <span class="text-lg">★★★★★</span>
                   </div>
                   </div>
-              <blockquote class="text-gray-700 text-sm leading-relaxed mb-4 font-light" style="font-family: 'Courier New', 'Monaco', monospace;">
+              <blockquote class="font-swiss-body text-gray-700 text-sm leading-relaxed mb-4 font-light" style="font-weight: 300; letter-spacing: 0.005em;">
                 "Absolut professionell und entspannend. Das Studio ist makellos sauber und die Atmosphäre sehr beruhigend. Yana arbeitet mit viel Liebe zum Detail."
                   </blockquote>
             </div>
@@ -625,7 +632,7 @@ import Layout from '../layouts/Layout.astro';
                   <span class="text-lg">★★★★★</span>
                   </div>
                   </div>
-              <blockquote class="text-gray-700 text-sm leading-relaxed mb-4 font-light" style="font-family: 'Courier New', 'Monaco', monospace;">
+              <blockquote class="font-swiss-body text-gray-700 text-sm leading-relaxed mb-4 font-light" style="font-weight: 300; letter-spacing: 0.005em;">
                 "Die beste Maniküre, die ich je hatte! Sehr präzise Arbeit und das Ergebnis hält wochenlang. Das Team ist super freundlich und kompetent."
                   </blockquote>
             </div>
@@ -650,7 +657,7 @@ import Layout from '../layouts/Layout.astro';
                   <span class="text-lg">★★★★★</span>
                   </div>
                   </div>
-              <blockquote class="text-gray-700 text-sm leading-relaxed mb-4 font-light" style="font-family: 'Courier New', 'Monaco', monospace;">
+              <blockquote class="font-swiss-body text-gray-700 text-sm leading-relaxed mb-4 font-light" style="font-weight: 300; letter-spacing: 0.005em;">
                 "Endlich ein Ort, wo ich mich vollkommen entspannen kann. Die Fußpflege ist außergewöhnlich und ich fühle mich wie neugeboren. Sehr zu empfehlen!"
                   </blockquote>
             </div>
@@ -675,7 +682,7 @@ import Layout from '../layouts/Layout.astro';
                   <span class="text-lg">★★★★★</span>
           </div>
           </div>
-              <blockquote class="text-gray-700 text-sm leading-relaxed mb-4 font-light" style="font-family: 'Courier New', 'Monaco', monospace;">
+              <blockquote class="font-swiss-body text-gray-700 text-sm leading-relaxed mb-4 font-light" style="font-weight: 300; letter-spacing: 0.005em;">
                 "Perfekte Hygiene, moderne Ausstattung und ein sehr professionelles Team. Hier stimmt einfach alles - von der Beratung bis zur Nachbehandlung."
               </blockquote>
         </div>
@@ -700,7 +707,7 @@ import Layout from '../layouts/Layout.astro';
                   <span class="text-lg">★★★★★</span>
           </div>
           </div>
-              <blockquote class="text-gray-700 text-sm leading-relaxed mb-4 font-light" style="font-family: 'Courier New', 'Monaco', monospace;">
+              <blockquote class="font-swiss-body text-gray-700 text-sm leading-relaxed mb-4 font-light" style="font-weight: 300; letter-spacing: 0.005em;">
                 "Ein wahres Verwöhnprogramm! Die Behandlung war so entspannend und das Ergebnis übertrifft alle Erwartungen. Komme definitiv wieder."
               </blockquote>
           </div>
@@ -751,7 +758,7 @@ import Layout from '../layouts/Layout.astro';
   <section id="contact" class="py-20 lg:py-32 bg-white fade-in-section">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-20">
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black tracking-widest mb-6 text-black leading-none" style="font-family: 'Impact', 'Arial Black', sans-serif; text-transform: uppercase; letter-spacing: 0.15em;">
+        <h2 class="font-swiss-display text-2xl sm:text-3xl lg:text-4xl font-black tracking-wider mb-6 text-black leading-none" style="text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800;">
           Wir freuen uns auf Sie!
         </h2>
         <div class="w-24 h-1 bg-orange-500 mx-auto"></div>
@@ -761,13 +768,13 @@ import Layout from '../layouts/Layout.astro';
       <div class="max-w-4xl mx-auto mb-16">
         <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-10 border border-gray-100">
           <div class="text-center mb-8">
-            <div class="text-gray-700 text-lg leading-relaxed mb-6" style="font-family: 'Courier New', 'Monaco', monospace;">
+            <div class="text-gray-700 text-lg leading-relaxed mb-6" style="font-weight: 300; letter-spacing: 0.005em;">
               <span class="font-bold">Folgen Sie uns auf Instagram</span><br>
               und bleiben Sie in Verbindung mit unserem Studio und unseren aktuellen Angeboten.
             </div>
             <a href="https://www.instagram.com/fusspflege_by_yana?igsh=ZDBhMXgwcXh2Y280" 
                target="_blank"
-               class="inline-flex items-center bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 text-white font-montserrat font-bold px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+               class="inline-flex items-center bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 text-white font-swiss-body font-bold px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
               <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
@@ -861,8 +868,8 @@ import Layout from '../layouts/Layout.astro';
   <section class="py-16 lg:py-24 bg-gradient-to-b from-white to-gray-50">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black tracking-widest mb-6 text-gray-900 leading-none" 
-            style="font-family: 'Impact', 'Arial Black', sans-serif; text-transform: uppercase; letter-spacing: 0.15em;">
+        <h2 class="font-swiss-display text-2xl sm:text-3xl lg:text-4xl font-black tracking-wider mb-6 text-gray-900 leading-none" 
+            style="text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800;">
           GALERIE STUDIO
         </h2>
         <div class="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
@@ -1043,7 +1050,7 @@ import Layout from '../layouts/Layout.astro';
             
             <!-- Contact Details Card -->
             <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-10 border border-gray-100">
-              <h3 class="text-2xl sm:text-3xl font-black tracking-widest mb-8 text-black leading-none" style="font-family: 'Impact', 'Arial Black', sans-serif; text-transform: uppercase; letter-spacing: 0.1em;">
+              <h3 class="font-swiss-display text-2xl sm:text-3xl font-black tracking-wider mb-8 text-black leading-none" style="text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800;">
                 Kontakt
               </h3>
               
@@ -1152,7 +1159,7 @@ import Layout from '../layouts/Layout.astro';
             <!-- Opening Hours Card -->
             <div class="mt-12"></div>
             <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-10 border border-gray-100">
-              <h4 class="text-xl font-black tracking-widest mb-6 text-black leading-none" style="font-family: 'Impact', 'Arial Black', sans-serif; text-transform: uppercase; letter-spacing: 0.1em;">
+              <h4 class="font-swiss-display text-xl font-black tracking-wider mb-6 text-black leading-none" style="text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800;">
                 Öffnungszeiten
               </h4>
               <div class="grid sm:grid-cols-2 gap-4">
@@ -1179,7 +1186,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="text-center mt-12">
               <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
                  target="_blank"
-                 class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-montserrat font-bold text-xl px-12 py-5 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                 class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-swiss-body font-bold text-xl px-12 py-5 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                 Jetzt Termin buchen
               </a>
             </div>

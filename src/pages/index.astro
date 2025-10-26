@@ -11,7 +11,10 @@ import Layout from '../layouts/Layout.astro';
         <div class="flex-shrink-0">
           <img src="https://static.wixstatic.com/media/a3b5c0_eb548c1e74764b1c9c8c61bcb9b0f0f4~mv2.png/v1/fill/w_210,h_138,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/GettyImages-1823979425_b.png" 
                alt="Fusspflege by Yana Logo" 
-               class="h-12 sm:h-16 md:h-18 lg:h-20 xl:h-24 w-auto">
+               width="210" 
+               height="138"
+               class="h-12 sm:h-16 md:h-18 lg:h-20 xl:h-24 w-auto"
+               loading="eager">
         </div>
         
         <!-- Center Content Container -->
@@ -37,7 +40,10 @@ import Layout from '../layouts/Layout.astro';
         
         <!-- Mobile menu button -->
         <div class="md:hidden">
-          <button id="mobile-menu-button" class="text-gray-700 hover:text-gray-900">
+          <button id="mobile-menu-button" 
+                  class="text-gray-700 hover:text-gray-900"
+                  aria-label="Mobile navigation menu"
+                  aria-expanded="false">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
@@ -101,7 +107,7 @@ import Layout from '../layouts/Layout.astro';
     </div>
     
     <!-- Orange Underline Decorative Elements -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle w-full flex justify-center">
+    <div class="absolute bottom-8 inset-x-0 flex justify-center animate-bounce-gentle">
       <div class="flex space-x-3 sm:space-x-4">
         <!-- Drop 1 -->
         <div class="w-6 h-8 sm:w-8 sm:h-10 bg-orange-500 rounded-full shadow-lg" style="border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;"></div>
@@ -163,8 +169,15 @@ import Layout from '../layouts/Layout.astro';
             <div class="mt-8 mb-8 flex justify-center space-x-4 sm:space-x-8">
               <!-- HYDRIM Thermodesinfektor -->
               <div class="group relative w-40 h-40 sm:w-52 sm:h-52 md:w-56 md:h-56 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-                <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/v1761220542/WhatsApp_Image_2025-10-21_at_23.32.45_d0lwir.jpg" 
+                <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/c_fill,w_224,h_224,f_webp,q_auto/v1761220542/WhatsApp_Image_2025-10-21_at_23.32.45_d0lwir.jpg" 
+                     srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/c_fill,w_160,h_160,f_webp,q_auto/v1761220542/WhatsApp_Image_2025-10-21_at_23.32.45_d0lwir.jpg 160w,
+                             https://res.cloudinary.com/dphbnwjtx/image/upload/c_fill,w_208,h_208,f_webp,q_auto/v1761220542/WhatsApp_Image_2025-10-21_at_23.32.45_d0lwir.jpg 208w,
+                             https://res.cloudinary.com/dphbnwjtx/image/upload/c_fill,w_224,h_224,f_webp,q_auto/v1761220542/WhatsApp_Image_2025-10-21_at_23.32.45_d0lwir.jpg 224w"
+                     sizes="(max-width: 640px) 160px, (max-width: 768px) 208px, 224px"
                      alt="HYDRIM Thermodesinfektor" 
+                     width="224" 
+                     height="224"
+                     loading="lazy"
                      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                 <!-- Overlay that disappears on hover -->
                 <div class="absolute inset-0 bg-gray-900/40 group-hover:bg-transparent transition-all duration-300 flex items-end">
@@ -178,8 +191,15 @@ import Layout from '../layouts/Layout.astro';
               
               <!-- Hygiene Equipment -->
               <div class="group relative w-40 h-40 sm:w-52 sm:h-52 md:w-56 md:h-56 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-                <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/v1761220542/WhatsApp_Image_2025-10-21_at_23.32.45_1_q7tibc.jpg" 
+                <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/c_fill,w_224,h_224,f_webp,q_auto/v1761220542/WhatsApp_Image_2025-10-21_at_23.32.45_1_q7tibc.jpg" 
+                     srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/c_fill,w_160,h_160,f_webp,q_auto/v1761220542/WhatsApp_Image_2025-10-21_at_23.32.45_1_q7tibc.jpg 160w,
+                             https://res.cloudinary.com/dphbnwjtx/image/upload/c_fill,w_208,h_208,f_webp,q_auto/v1761220542/WhatsApp_Image_2025-10-21_at_23.32.45_1_q7tibc.jpg 208w,
+                             https://res.cloudinary.com/dphbnwjtx/image/upload/c_fill,w_224,h_224,f_webp,q_auto/v1761220542/WhatsApp_Image_2025-10-21_at_23.32.45_1_q7tibc.jpg 224w"
+                     sizes="(max-width: 640px) 160px, (max-width: 768px) 208px, 224px"
                      alt="Moderne Hygiene Ausstattung" 
+                     width="224" 
+                     height="224"
+                     loading="lazy"
                      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                 <!-- Overlay that disappears on hover -->
                 <div class="absolute inset-0 bg-gray-900/40 group-hover:bg-transparent transition-all duration-300 flex items-end">
@@ -705,8 +725,14 @@ import Layout from '../layouts/Layout.astro';
             <a href="https://www.instagram.com/p/DJfYMHOqzb2/?igsh=MWF2Yzh6YmIzMnZ5ZA==" 
                target="_blank" 
                class="aspect-square rounded-lg overflow-hidden hover:opacity-80 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
-              <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/v1758111563/IMG_9167_fiioto.jpg" 
+              <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_200,h_200,f_webp,q_auto/v1758111563/IMG_9167_fiioto.jpg" 
+                   srcset="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_150,h_150,f_webp,q_auto/v1758111563/IMG_9167_fiioto.jpg 150w,
+                           https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_200,h_200,f_webp,q_auto/v1758111563/IMG_9167_fiioto.jpg 200w"
+                   sizes="(max-width: 640px) 150px, 200px"
                    alt="Instagram Beitrag" 
+                   width="200" 
+                   height="200"
+                   loading="lazy"
                    class="w-full h-full object-cover">
             </a>
             
@@ -714,8 +740,14 @@ import Layout from '../layouts/Layout.astro';
             <a href="https://www.instagram.com/p/C2iEFbYKaY8/?igsh=MW5vNWFvdmdtNTZxcQ==" 
                target="_blank" 
                class="aspect-square rounded-lg overflow-hidden hover:opacity-80 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
-              <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/v1758111595/IMG_9170_b2qc1t.jpg" 
+              <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_200,h_200,f_webp,q_auto/v1758111595/IMG_9170_b2qc1t.jpg" 
+                   srcset="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_150,h_150,f_webp,q_auto/v1758111595/IMG_9170_b2qc1t.jpg 150w,
+                           https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_200,h_200,f_webp,q_auto/v1758111595/IMG_9170_b2qc1t.jpg 200w"
+                   sizes="(max-width: 640px) 150px, 200px"
                    alt="Instagram Beitrag" 
+                   width="200" 
+                   height="200"
+                   loading="lazy"
                    class="w-full h-full object-cover">
             </a>
             
@@ -1111,6 +1143,9 @@ import Layout from '../layouts/Layout.astro';
               <div>
                 <img src="https://static.wixstatic.com/media/a3b5c0_eb548c1e74764b1c9c8c61bcb9b0f0f4~mv2.png/v1/fill/w_210,h_138,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/GettyImages-1823979425_b.png" 
                      alt="Fusspflege by Yana Logo" 
+                     width="210" 
+                     height="138"
+                     loading="lazy"
                      class="h-16 w-auto mb-6">
               </div>
               <p class="text-gray-600 leading-relaxed text-lg">
@@ -1183,6 +1218,7 @@ import Layout from '../layouts/Layout.astro';
                 <div class="flex space-x-4">
                   <a href="https://www.instagram.com/fusspflege_by_yana?igsh=ZDBhMXgwcXh2Y280" 
                      target="_blank" 
+                     aria-label="Follow us on Instagram @fusspflege_by_yana"
                      class="w-12 h-12 bg-gray-100 hover:bg-orange-500 rounded-xl flex items-center justify-center transition-all duration-300 group shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                     <svg class="w-6 h-6 text-gray-600 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>

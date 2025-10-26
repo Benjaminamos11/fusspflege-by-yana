@@ -6,12 +6,12 @@ import Layout from '../layouts/Layout.astro';
   <!-- Navigation -->
   <nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 fade-in-section">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center py-4">
+      <div class="flex justify-between items-center py-3 sm:py-4">
         <!-- Logo -->
         <div class="flex-shrink-0">
           <img src="https://static.wixstatic.com/media/a3b5c0_eb548c1e74764b1c9c8c61bcb9b0f0f4~mv2.png/v1/fill/w_210,h_138,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/GettyImages-1823979425_b.png" 
                alt="Fusspflege by Yana Logo" 
-               class="h-18 sm:h-20 lg:h-24 w-auto">
+               class="h-12 sm:h-16 md:h-18 lg:h-20 xl:h-24 w-auto">
         </div>
         
         <!-- Desktop Navigation -->
@@ -34,17 +34,17 @@ import Layout from '../layouts/Layout.astro';
       </div>
       
       <!-- Mobile Navigation -->
-      <div id="mobile-menu" class="md:hidden hidden pb-6">
-        <div class="flex flex-col space-y-2 bg-gray-50 rounded-2xl p-4">
-          <a href="#hero" class="nav-pill-mobile active px-4 py-3 rounded-full font-light text-sm transition-all duration-300 bg-orange-500 text-white mobile-nav-link">HOME</a>
-          <a href="#about" class="nav-pill-mobile px-4 py-3 rounded-full font-light text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">ÜBER UNS</a>
-        <a href="/treatments" class="nav-pill-mobile px-4 py-3 rounded-full font-light text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">FUSSPFLEGE & MANIKÜRE</a>
-        <a href="#reviews" class="nav-pill-mobile px-4 py-3 rounded-full font-light text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">BEWERTUNGEN</a>
-        <a href="#contact" class="nav-pill-mobile px-4 py-3 rounded-full font-light text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">KONTAKT</a>
-          <div class="pt-2 border-t border-gray-200 mt-2">
-            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" target="_blank" class="bg-white hover:bg-orange-50 text-orange-500 px-6 py-3 rounded-full font-light text-sm transition-all duration-300 text-center block mobile-nav-link border border-orange-500 hover:border-2 hover:border-orange-600">
-            Termin buchen
-          </a>
+      <div id="mobile-menu" class="md:hidden hidden pb-4">
+        <div class="flex flex-col space-y-1 bg-gray-50 rounded-2xl p-3">
+          <a href="#hero" class="nav-pill-mobile active px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-orange-500 text-white mobile-nav-link">HOME</a>
+          <a href="#about" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">ÜBER UNS</a>
+          <a href="/treatments" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">FUSSPFLEGE & MANIKÜRE</a>
+          <a href="#reviews" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">BEWERTUNGEN</a>
+          <a href="#contact" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">KONTAKT</a>
+          <div class="pt-2 border-t border-gray-200 mt-1">
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" target="_blank" class="bg-white hover:bg-orange-50 text-orange-500 px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 text-center block mobile-nav-link border border-orange-500 hover:border-2 hover:border-orange-600">
+              Termin buchen
+            </a>
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@ import Layout from '../layouts/Layout.astro';
   </nav>
 
   <!-- Hero Section -->
-  <section id="hero" class="relative h-screen overflow-hidden pt-20">
+  <section id="hero" class="relative h-screen overflow-hidden pt-16 sm:pt-20">
     <!-- Full Banner Background Image -->
     <div class="absolute inset-0">
       <picture>
@@ -68,23 +68,23 @@ import Layout from '../layouts/Layout.astro';
     
     
     <!-- Hero Content -->
-    <div class="absolute inset-0 z-10 flex items-end pb-6 sm:pb-8 md:pb-12">
-      <div class="px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 w-full max-w-4xl">
-        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black tracking-wide sm:tracking-widest mb-4 sm:mb-6 md:mb-8 animate-fade-in-up text-white leading-tight" style="font-family: 'Impact', 'Arial Black', sans-serif; text-transform: uppercase; letter-spacing: 0.05em sm:letter-spacing: 0.1em md:letter-spacing: 0.15em;">
+    <div class="absolute inset-0 z-10 flex items-center sm:items-end pb-6 sm:pb-8 md:pb-12">
+      <div class="px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 w-full max-w-4xl text-center sm:text-left">
+        <h1 class="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black tracking-wide sm:tracking-widest mb-3 sm:mb-6 md:mb-8 animate-fade-in-up text-white leading-tight" style="font-family: 'Impact', 'Arial Black', sans-serif; text-transform: uppercase; letter-spacing: 0.05em;">
           Perfektion von Händen bis zu den <span class="text-orange-500">Zehen</span>
-      </h1>
+        </h1>
       
-        <p class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-normal mb-6 sm:mb-8 md:mb-12 animate-fade-in-up text-white/95 leading-relaxed max-w-2xl" style="animation-delay: 0.2s; font-family: 'Courier New', 'Monaco', monospace;">
-        Von der ersten Berührung bis zum letzten Schliff – bei uns steht Hygiene an erster Stelle.<br class="hidden sm:block">
-        <span class="block sm:inline">Gönnen Sie sich Fusspflege und Maniküre auf höchstem Niveau – in wohltuender Atmosphäre.</span>
-      </p>
+        <p class="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-normal mb-4 sm:mb-8 md:mb-12 animate-fade-in-up text-white/95 leading-relaxed max-w-2xl mx-auto sm:mx-0" style="animation-delay: 0.2s; font-family: 'Courier New', 'Monaco', monospace;">
+          Von der ersten Berührung bis zum letzten Schliff – bei uns steht Hygiene an erster Stelle.<br class="hidden sm:block">
+          <span class="block sm:inline mt-1 sm:mt-0">Gönnen Sie sich Fusspflege und Maniküre auf höchstem Niveau – in wohltuender Atmosphäre.</span>
+        </p>
       
         <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
            target="_blank"
-           class="btn-primary inline-block bg-white hover:bg-orange-50 text-orange-500 font-montserrat font-medium text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300 animate-fade-in-up border border-orange-500 hover:border-2 hover:border-orange-600 shadow-lg"
-         style="animation-delay: 0.4s;">
-        Jetzt Termin buchen
-      </a>
+           class="btn-primary inline-block bg-white hover:bg-orange-50 text-orange-500 font-montserrat font-medium text-xs xs:text-sm sm:text-base px-4 xs:px-6 sm:px-8 py-2 xs:py-3 sm:py-4 rounded-full transition-all duration-300 animate-fade-in-up border border-orange-500 hover:border-2 hover:border-orange-600 shadow-lg"
+           style="animation-delay: 0.4s;">
+          Jetzt Termin buchen
+        </a>
       </div>
     </div>
     
@@ -1122,9 +1122,9 @@ import Layout from '../layouts/Layout.astro';
                 © 2024 Fusspflege by Yana. Alle Rechte vorbehalten.
               </p>
               <div class="flex space-x-6 text-sm text-gray-500">
-                <a href="#" class="hover:text-orange-500 transition-colors">Datenschutz</a>
-                <a href="#" class="hover:text-orange-500 transition-colors">Impressum</a>
-                <a href="#" class="hover:text-orange-500 transition-colors">AGB</a>
+                <a href="/datenschutz" class="hover:text-orange-500 transition-colors">Datenschutz</a>
+                <a href="/impressum" class="hover:text-orange-500 transition-colors">Impressum</a>
+                <a href="/agb" class="hover:text-orange-500 transition-colors">AGB</a>
               </div>
             </div>
           </div>
@@ -1407,4 +1407,64 @@ import Layout from '../layouts/Layout.astro';
       }
     });
   </script>
+
+  <!-- Custom Mobile Styles -->
+  <style>
+    /* Extra Small Breakpoint for Mobile Optimization */
+    @media (min-width: 375px) {
+      .xs\:text-2xl { font-size: 1.5rem; line-height: 2rem; }
+      .xs\:text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+      .xs\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .xs\:py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+    }
+    
+    /* Mobile Navigation Enhancements */
+    @media (max-width: 768px) {
+      .mobile-nav-link {
+        border: 1px solid transparent;
+        transition: all 0.3s ease;
+      }
+      
+      .mobile-nav-link:hover {
+        transform: translateX(4px);
+        border-color: rgba(249, 115, 22, 0.2);
+      }
+      
+      /* Better mobile hero text spacing */
+      #hero h1 {
+        line-height: 1.1;
+        margin-bottom: 1rem;
+      }
+      
+      #hero p {
+        line-height: 1.4;
+        margin-bottom: 1.5rem;
+      }
+      
+      /* Mobile button improvements */
+      .btn-primary {
+        white-space: nowrap;
+        font-weight: 600;
+      }
+    }
+    
+    /* Ultra small mobile phones */
+    @media (max-width: 374px) {
+      #hero h1 {
+        font-size: 1.125rem !important;
+        line-height: 1.2;
+        letter-spacing: 0.025em;
+      }
+      
+      #hero p {
+        font-size: 0.75rem !important;
+        line-height: 1.3;
+      }
+      
+      .btn-primary {
+        font-size: 0.75rem !important;
+        padding: 0.5rem 1rem !important;
+      }
+    }
+  </style>
 </Layout>

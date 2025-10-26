@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Impressum - Fusspflege by Yana">
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 fade-in-section">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-3 sm:py-4">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="/">
+            <img src="https://static.wixstatic.com/media/a3b5c0_eb548c1e74764b1c9c8c61bcb9b0f0f4~mv2.png/v1/fill/w_210,h_138,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/GettyImages-1823979425_b.png" 
+                 alt="Fusspflege by Yana Logo" 
+                 class="h-12 sm:h-16 md:h-18 lg:h-20 xl:h-24 w-auto">
+          </a>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-1 bg-gray-100 rounded-full p-1">
+          <a href="/" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">HOME</a>
+          <a href="/#about" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">ÜBER UNS</a>
+          <a href="/treatments" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">FUSSPFLEGE & MANIKÜRE</a>
+          <a href="/#reviews" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">BEWERTUNGEN</a>
+          <a href="/#contact" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">KONTAKT</a>
+        </div>
+        
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="text-gray-700 hover:text-gray-900">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="md:hidden hidden pb-4">
+        <div class="flex flex-col space-y-1 bg-gray-50 rounded-2xl p-3">
+          <a href="/" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">HOME</a>
+          <a href="/#about" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">ÜBER UNS</a>
+          <a href="/treatments" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">FUSSPFLEGE & MANIKÜRE</a>
+          <a href="/#reviews" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">BEWERTUNGEN</a>
+          <a href="/#contact" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">KONTAKT</a>
+          <div class="pt-2 border-t border-gray-200 mt-1">
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" target="_blank" class="bg-white hover:bg-orange-50 text-orange-500 px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 text-center block mobile-nav-link border border-orange-500 hover:border-2 hover:border-orange-600">
+              Termin buchen
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="pt-24 sm:pt-28 pb-12 bg-gradient-to-b from-gray-50 to-white min-h-screen">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-12">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-widest mb-6 text-gray-900 leading-none" 
+              style="font-family: 'Impact', 'Arial Black', sans-serif; text-transform: uppercase; letter-spacing: 0.15em;">
+            IMPRESSUM
+          </h1>
+          <div class="w-24 h-1 bg-orange-500 mx-auto"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="bg-white rounded-2xl sm:rounded-3xl shadow-lg p-6 sm:p-8 lg:p-12 border border-gray-100">
+          <div class="prose prose-lg max-w-none">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Impressum</h2>
+            
+            <div class="space-y-4 text-gray-700 leading-relaxed">
+              <div>
+                <strong class="text-gray-900">Name oder Firma:</strong><br>
+                Fusspflege by Yana; Yana Otto
+              </div>
+              
+              <div>
+                <strong class="text-gray-900">Adresse:</strong><br>
+                Winkelriedstrasse 66<br>
+                6003 Luzern, Schweiz
+              </div>
+              
+              <div>
+                <strong class="text-gray-900">Telefon:</strong><br>
+                <a href="tel:0798978891" class="text-orange-500 hover:text-orange-600 transition-colors">079 897 88 91</a>
+              </div>
+              
+              <div>
+                <strong class="text-gray-900">E-Mail-Adresse:</strong><br>
+                <a href="mailto:info@fusspflegebyyana.ch" class="text-orange-500 hover:text-orange-600 transition-colors">info@fusspflegebyyana.ch</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Back Button -->
+        <div class="text-center mt-8">
+          <a href="/" class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+            </svg>
+            Zurück zur Startseite
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Mobile menu functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+    });
+  </script>
+
+  <style>
+    /* Mobile Navigation Enhancements */
+    @media (max-width: 768px) {
+      .mobile-nav-link {
+        border: 1px solid transparent;
+        transition: all 0.3s ease;
+      }
+      
+      .mobile-nav-link:hover {
+        transform: translateX(4px);
+        border-color: rgba(249, 115, 22, 0.2);
+      }
+    }
+  </style>
+</Layout>

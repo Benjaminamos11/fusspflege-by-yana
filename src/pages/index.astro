@@ -3,16 +3,42 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Fusspflege by Yana - Professionelle Fusspflege und Maniküre">
+  <!-- Performance: Preconnect to external domains -->
+  <link rel="preconnect" href="https://res.cloudinary.com">
+  <link rel="preconnect" href="https://static.wixstatic.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Performance: Font preloading and optimization -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" as="style">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"></noscript>
+  
+  <!-- Critical CSS - Inline above the fold styles -->
+  <style>
+    /* Core font fallbacks to prevent layout shift */
+    body { font-family: 'Montserrat', system-ui, -apple-system, sans-serif; }
+    
+    /* Animation optimization */
+    .fade-in-section { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
+    
+    /* Hero section critical styles */
+    .hero-gradient { background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%); }
+  </style>
   <!-- Navigation -->
   <nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 fade-in-section">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center py-3 sm:py-4">
         <!-- Logo -->
         <div class="flex-shrink-0">
-          <img src="https://static.wixstatic.com/media/a3b5c0_eb548c1e74764b1c9c8c61bcb9b0f0f4~mv2.png/v1/fill/w_210,h_138,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/GettyImages-1823979425_b.png" 
+          <img src="https://static.wixstatic.com/media/a3b5c0_eb548c1e74764b1c9c8c61bcb9b0f0f4~mv2.png/v1/fill/w_96,h_63,al_c,q_auto,f_webp/Logo.png" 
+               srcset="https://static.wixstatic.com/media/a3b5c0_eb548c1e74764b1c9c8c61bcb9b0f0f4~mv2.png/v1/fill/w_73,h_48,al_c,q_auto,f_webp/Logo.png 73w,
+                       https://static.wixstatic.com/media/a3b5c0_eb548c1e74764b1c9c8c61bcb9b0f0f4~mv2.png/v1/fill/w_96,h_63,al_c,q_auto,f_webp/Logo.png 96w"
+               sizes="(max-width: 640px) 73px, 96px"
                alt="Fusspflege by Yana Logo" 
-               width="210" 
-               height="138"
+               width="96" 
+               height="63"
                class="h-12 sm:h-16 md:h-18 lg:h-20 xl:h-24 w-auto"
                loading="eager">
         </div>
@@ -252,9 +278,15 @@ import Layout from '../layouts/Layout.astro';
           <!-- Background Image -->
           <div class="absolute inset-0">
             <picture>
-              <source srcset="https://res.cloudinary.com/dihw9b8ce/image/upload/f_webp,q_auto/v1758098619/a-photograph-of-a-contemporary-pedicure-_DupmzQsaSaCD6fXtA1Hd9Q_w4eCiSRARGKhnzOhPbTy8w_yngerg.webp" type="image/webp">
-              <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/v1758098619/a-photograph-of-a-contemporary-pedicure-_DupmzQsaSaCD6fXtA1Hd9Q_w4eCiSRARGKhnzOhPbTy8w_yngerg.png" 
+              <source srcset="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_400,h_533,f_webp,q_auto/v1758098619/a-photograph-of-a-contemporary-pedicure-_DupmzQsaSaCD6fXtA1Hd9Q_w4eCiSRARGKhnzOhPbTy8w_yngerg.webp 400w,
+                              https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_507,h_676,f_webp,q_auto/v1758098619/a-photograph-of-a-contemporary-pedicure-_DupmzQsaSaCD6fXtA1Hd9Q_w4eCiSRARGKhnzOhPbTy8w_yngerg.webp 507w"
+                      sizes="(max-width: 768px) 400px, 507px"
+                      type="image/webp">
+              <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_507,h_676,f_webp,q_auto/v1758098619/a-photograph-of-a-contemporary-pedicure-_DupmzQsaSaCD6fXtA1Hd9Q_w4eCiSRARGKhnzOhPbTy8w_yngerg.webp" 
                    alt="Contemporary pedicure treatment" 
+                   width="507"
+                   height="676"
+                   loading="lazy"
                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             </picture>
           </div>
@@ -302,9 +334,15 @@ import Layout from '../layouts/Layout.astro';
           <!-- Background Image -->
           <div class="absolute inset-0">
             <picture>
-              <source srcset="https://res.cloudinary.com/dihw9b8ce/image/upload/f_webp,q_auto/v1758098525/a-photograph-showcasing-a-close-up-view-_bRwCnPpcRx2qnYC1we2mtw_C1sUiZhiSqGqUIoQZvB8dg_ff7if8.webp" type="image/webp">
-              <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/v1758098525/a-photograph-showcasing-a-close-up-view-_bRwCnPpcRx2qnYC1we2mtw_C1sUiZhiSqGqUIoQZvB8dg_ff7if8.png" 
+              <source srcset="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_400,h_533,f_webp,q_auto/v1758098525/a-photograph-showcasing-a-close-up-view-_bRwCnPpcRx2qnYC1we2mtw_C1sUiZhiSqGqUIoQZvB8dg_ff7if8.webp 400w,
+                              https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_507,h_676,f_webp,q_auto/v1758098525/a-photograph-showcasing-a-close-up-view-_bRwCnPpcRx2qnYC1we2mtw_C1sUiZhiSqGqUIoQZvB8dg_ff7if8.webp 507w"
+                      sizes="(max-width: 768px) 400px, 507px"
+                      type="image/webp">
+              <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_507,h_676,f_webp,q_auto/v1758098525/a-photograph-showcasing-a-close-up-view-_bRwCnPpcRx2qnYC1we2mtw_C1sUiZhiSqGqUIoQZvB8dg_ff7if8.webp" 
                    alt="Professional nail care products" 
+                   width="507"
+                   height="676"
+                   loading="lazy"
                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             </picture>
           </div>
@@ -443,9 +481,15 @@ import Layout from '../layouts/Layout.astro';
             <div class="order-2 lg:order-1 flex justify-center items-start">
               <div class="aspect-square rounded-2xl shadow-lg overflow-hidden max-w-lg">
                 <picture>
-                  <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto/v1761220542/WhatsApp_Image_2025-10-21_at_23.35.44_vg0lf7.webp" type="image/webp">
-                  <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/v1761220542/WhatsApp_Image_2025-10-21_at_23.35.44_vg0lf7.jpg" 
+                  <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/c_fill,w_400,h_400,f_webp,q_auto/v1761220542/WhatsApp_Image_2025-10-21_at_23.35.44_vg0lf7.webp 400w,
+                                  https://res.cloudinary.com/dphbnwjtx/image/upload/c_fill,w_507,h_507,f_webp,q_auto/v1761220542/WhatsApp_Image_2025-10-21_at_23.35.44_vg0lf7.webp 507w"
+                          sizes="(max-width: 768px) 400px, 507px"
+                          type="image/webp">
+                  <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/c_fill,w_507,h_507,f_webp,q_auto/v1761220542/WhatsApp_Image_2025-10-21_at_23.35.44_vg0lf7.webp" 
                        alt="Yana Otto - Inhaberin und Fusspflegerin" 
+                       width="507"
+                       height="507"
+                       loading="lazy"
                        class="w-full h-full object-cover object-top"
                        style="filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.15));">  
                 </picture>
@@ -458,8 +502,14 @@ import Layout from '../layouts/Layout.astro';
             <!-- Portrait -->
             <div class="order-2 lg:order-2">
               <div class="aspect-square rounded-2xl shadow-lg overflow-hidden">
-                <img src="https://static.wixstatic.com/media/a3b5c0_0c22863d4d2d4781ad0d710a900f1fb5~mv2.jpeg/v1/fill/w_566,h_726,fp_0.46_0.36,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Iana%20Fingert.jpeg" 
+                <img src="https://static.wixstatic.com/media/a3b5c0_0c22863d4d2d4781ad0d710a900f1fb5~mv2.jpeg/v1/fill/w_487,h_487,fp_0.46_0.36,q_auto,f_webp/Iana%20Fingert.jpeg" 
+                     srcset="https://static.wixstatic.com/media/a3b5c0_0c22863d4d2d4781ad0d710a900f1fb5~mv2.jpeg/v1/fill/w_380,h_380,fp_0.46_0.36,q_auto,f_webp/Iana%20Fingert.jpeg 380w,
+                             https://static.wixstatic.com/media/a3b5c0_0c22863d4d2d4781ad0d710a900f1fb5~mv2.jpeg/v1/fill/w_487,h_487,fp_0.46_0.36,q_auto,f_webp/Iana%20Fingert.jpeg 487w"
+                     sizes="(max-width: 768px) 380px, 487px"
                      alt="Ana Fingert - Fusspflegerin" 
+                     width="487"
+                     height="487" 
+                     loading="lazy"
                      class="w-full h-full object-cover">
               </div>
             </div>
@@ -509,9 +559,15 @@ import Layout from '../layouts/Layout.astro';
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
       <picture>
-        <source srcset="https://res.cloudinary.com/dihw9b8ce/image/upload/f_webp,q_auto/v1758107007/a-clean-luxury-editorial-photograph-show_4TEXiZVrQtCoFkjgu5kqKA_iCUF29uHTp-svv8760VT0w_yrqk8a.webp" type="image/webp">
-        <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/v1758107007/a-clean-luxury-editorial-photograph-show_4TEXiZVrQtCoFkjgu5kqKA_iCUF29uHTp-svv8760VT0w_yrqk8a.jpg" 
+        <source srcset="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_1200,h_600,f_webp,q_80/v1758107007/a-clean-luxury-editorial-photograph-show_4TEXiZVrQtCoFkjgu5kqKA_iCUF29uHTp-svv8760VT0w_yrqk8a.webp 1200w,
+                        https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_1920,h_960,f_webp,q_80/v1758107007/a-clean-luxury-editorial-photograph-show_4TEXiZVrQtCoFkjgu5kqKA_iCUF29uHTp-svv8760VT0w_yrqk8a.webp 1920w"
+                sizes="100vw"
+                type="image/webp">
+        <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_1920,h_960,f_webp,q_80/v1758107007/a-clean-luxury-editorial-photograph-show_4TEXiZVrQtCoFkjgu5kqKA_iCUF29uHTp-svv8760VT0w_yrqk8a.webp" 
              alt="Luxury editorial background" 
+             width="1920"
+             height="960"
+             loading="lazy"
              class="w-full h-full object-cover">
       </picture>
       <div class="absolute inset-0 bg-white/40 backdrop-blur-sm"></div>
@@ -755,8 +811,14 @@ import Layout from '../layouts/Layout.astro';
             <a href="https://www.instagram.com/p/B6c-peBFihm/?igsh=MWkzZ2VjZzFhc2Jkaw==" 
                target="_blank" 
                class="aspect-square rounded-lg overflow-hidden hover:opacity-80 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
-              <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/v1758111612/IMG_9171_lspoqt.jpg" 
+              <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_200,h_200,f_webp,q_auto/v1758111612/IMG_9171_lspoqt.jpg" 
+                   srcset="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_150,h_150,f_webp,q_auto/v1758111612/IMG_9171_lspoqt.jpg 150w,
+                           https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_200,h_200,f_webp,q_auto/v1758111612/IMG_9171_lspoqt.jpg 200w"
+                   sizes="(max-width: 640px) 150px, 200px"
                    alt="Instagram Beitrag" 
+                   width="200" 
+                   height="200"
+                   loading="lazy"
                    class="w-full h-full object-cover">
             </a>
             
@@ -764,8 +826,14 @@ import Layout from '../layouts/Layout.astro';
             <a href="https://www.instagram.com/p/DCXpelsKg5c/?igsh=MWtweGE5NDM1cXlocg==" 
                target="_blank" 
                class="aspect-square rounded-lg overflow-hidden hover:opacity-80 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
-              <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/v1758111585/IMG_9169_agrafl.jpg" 
+              <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_200,h_200,f_webp,q_auto/v1758111585/IMG_9169_agrafl.jpg" 
+                   srcset="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_150,h_150,f_webp,q_auto/v1758111585/IMG_9169_agrafl.jpg 150w,
+                           https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_200,h_200,f_webp,q_auto/v1758111585/IMG_9169_agrafl.jpg 200w"
+                   sizes="(max-width: 640px) 150px, 200px"
                    alt="Instagram Beitrag" 
+                   width="200" 
+                   height="200"
+                   loading="lazy"
                    class="w-full h-full object-cover">
             </a>
             
@@ -773,8 +841,14 @@ import Layout from '../layouts/Layout.astro';
             <a href="https://www.instagram.com/p/DHO3xeEKvMy/?igsh=MThteWo5ODYzN2RkNw==" 
                target="_blank" 
                class="aspect-square rounded-lg overflow-hidden hover:opacity-80 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
-              <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/v1758111573/IMG_9168_mrkhjp.jpg" 
+              <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_200,h_200,f_webp,q_auto/v1758111573/IMG_9168_mrkhjp.jpg" 
+                   srcset="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_150,h_150,f_webp,q_auto/v1758111573/IMG_9168_mrkhjp.jpg 150w,
+                           https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_200,h_200,f_webp,q_auto/v1758111573/IMG_9168_mrkhjp.jpg 200w"
+                   sizes="(max-width: 640px) 150px, 200px"
                    alt="Instagram Beitrag" 
+                   width="200" 
+                   height="200"
+                   loading="lazy"
                    class="w-full h-full object-cover">
             </a>
           </div>

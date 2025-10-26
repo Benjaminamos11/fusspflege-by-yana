@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://fusspflege-by-yana.netlify.app/sitemap.xml
+
+# Block sensitive pages
+Disallow: /admin/
+Disallow: /_astro/
+Disallow: /api/
+
+# Allow search engines to crawl all public pages
+Allow: /
+Allow: /treatments
+Allow: /agb
+Allow: /datenschutz  
+Allow: /impressum
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1

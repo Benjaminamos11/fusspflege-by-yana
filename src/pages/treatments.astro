@@ -1,0 +1,694 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Treatments - Fusspflege by Yana - Alle Behandlungen im Detail">
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 fade-in-section">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="/">
+            <img src="https://static.wixstatic.com/media/a3b5c0_eb548c1e74764b1c9c8c61bcb9b0f0f4~mv2.png/v1/fill/w_210,h_138,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/GettyImages-1823979425_b.png" 
+                 alt="Fusspflege by Yana Logo" 
+                 class="h-18 sm:h-20 lg:h-24 w-auto">
+          </a>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-1 bg-gray-100 rounded-full p-1">
+          <a href="/" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">HOME</a>
+          <a href="/#about" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">ÜBER UNS</a>
+          <a href="/treatments" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-orange-500 text-white shadow-sm">FUSSPFLEGE & MANIKÜRE</a>
+          <a href="/#reviews" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">BEWERTUNGEN</a>
+          <a href="/#contact" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">KONTAKT</a>
+        </div>
+        
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="text-gray-700 hover:text-gray-900">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="md:hidden hidden pb-6">
+        <div class="flex flex-col space-y-2 bg-gray-50 rounded-2xl p-4">
+          <a href="/" class="nav-pill-mobile px-4 py-3 rounded-full font-light text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">HOME</a>
+          <a href="/#about" class="nav-pill-mobile px-4 py-3 rounded-full font-light text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">ÜBER UNS</a>
+          <a href="/treatments" class="nav-pill-mobile active px-4 py-3 rounded-full font-light text-sm transition-all duration-300 bg-orange-500 text-white mobile-nav-link">FUSSPFLEGE & MANIKÜRE</a>
+          <a href="/#reviews" class="nav-pill-mobile px-4 py-3 rounded-full font-light text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">BEWERTUNGEN</a>
+          <a href="/#contact" class="nav-pill-mobile px-4 py-3 rounded-full font-light text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">KONTAKT</a>
+          <div class="pt-2 border-t border-gray-200 mt-2">
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" target="_blank" class="bg-white hover:bg-orange-50 text-orange-500 px-6 py-3 rounded-full font-light text-sm transition-all duration-300 text-center block mobile-nav-link border border-orange-500 hover:border-2 hover:border-orange-600">
+            Termin buchen
+          </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section for Treatments -->
+  <section class="pt-32 pb-16 bg-gradient-to-b from-orange-50 to-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-widest mb-6 text-black leading-none" style="font-family: 'Impact', 'Arial Black', sans-serif; text-transform: uppercase; letter-spacing: 0.15em;">
+          FUSSPFLEGE & MANIKÜRE
+        </h1>
+        <div class="w-24 h-1 bg-orange-500 mx-auto mb-8"></div>
+        
+        <!-- Hygiene Text -->
+        <div class="max-w-4xl mx-auto mb-12">
+          <div class="bg-white rounded-3xl shadow-lg p-8 border border-gray-100">
+            <div class="flex items-center justify-center mb-6">
+              <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+              </div>
+            </div>
+            
+            <p class="text-lg text-gray-700 leading-relaxed mb-4">
+              Hygiene und Gesundheit haben für uns oberste Priorität. Daher verwenden wir für jede Kundin und jeden Kunden ein <strong class="text-orange-600">frisch desinfiziertes Behandlungsset</strong> – bestehend aus Zange, Fräse, Schleifkappen und weiteren Instrumenten. Diese werden nach jeder Anwendung gründlich in unserem modernen <strong class="text-orange-600">HYDRIM-Thermodesinfektor</strong> gereinigt.
+            </p>
+            
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+              Auch sämtliche Arbeitsflächen werden nach jeder Behandlung sorgfältig desinfiziert, um jederzeit höchste Hygienestandards zu gewährleisten.
+            </p>
+            
+            <div class="bg-orange-50 border border-orange-200 rounded-2xl p-6">
+              <p class="text-orange-800 font-semibold text-center">
+                <strong>Hinweis:</strong> Aktuell können Sie nur hier buchen, eine Liste der Services finden Sie unten.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 mb-8 sm:mb-12 px-4">
+          <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+             target="_blank"
+             class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-base sm:text-lg w-full sm:w-auto text-center">
+            TERMIN BUCHEN
+          </a>
+          <button onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})" 
+                  class="bg-white hover:bg-orange-50 text-orange-500 font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-orange-500 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-base sm:text-lg w-full sm:w-auto text-center">
+            SERVICES ANSEHEN
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Filter Tabs -->
+      <div class="flex justify-center mb-12 px-4">
+        <div class="bg-gray-100 rounded-full p-1 sm:p-2 flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-2 w-full sm:w-auto max-w-md sm:max-w-none">
+          <button class="filter-btn active px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 text-sm sm:text-base" data-filter="all">
+            Alle Services
+          </button>
+          <button class="filter-btn px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 text-sm sm:text-base" data-filter="manikuere">
+            Maniküre
+          </button>
+          <button class="filter-btn px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 text-sm sm:text-base" data-filter="pediküre">
+            Pediküre
+          </button>
+        </div>
+      </div>
+      
+      <!-- Services Grid -->
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          
+          <!-- Maniküre Services -->
+          <div class="service-card bg-white rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 sm:p-6 border border-gray-100" data-category="manikuere">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-3 sm:mb-4">
+              <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-0 leading-tight">Maniküre</h3>
+              <div class="text-xl sm:text-2xl font-black text-orange-500">CHF 70</div>
+            </div>
+            <div class="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4">45 Min.</div>
+            <p class="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed">Professionelle Nagelpflege für gepflegte Hände.</p>
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+               target="_blank"
+               class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold transition-colors">
+              MEHR ZUR LEISTUNG
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="service-card bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100" data-category="manikuere">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-gray-900">Maniküre inkl. normaler Nagellack (OPI)</h3>
+              <div class="text-2xl font-black text-orange-500">CHF 85</div>
+            </div>
+            <div class="text-sm text-gray-600 mb-4">55 Min.</div>
+            <p class="text-gray-700 mb-6">Maniküre mit hochwertigem OPI Nagellack für langanhaltende Farbe.</p>
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+               target="_blank"
+               class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold transition-colors">
+              MEHR ZUR LEISTUNG
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="service-card bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100" data-category="manikuere">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-gray-900">Maniküre/Nagellack entfernen & Lackieren</h3>
+              <div class="text-2xl font-black text-orange-500">CHF 90</div>
+            </div>
+            <div class="text-sm text-gray-600 mb-4">55 Min.</div>
+            <p class="text-gray-700 mb-6">Entfernung des alten Lacks und frische Lackierung.</p>
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+               target="_blank"
+               class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold transition-colors">
+              MEHR ZUR LEISTUNG
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="service-card bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100" data-category="manikuere">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-gray-900">Maniküre inkl. Gellack (OPI GelColor)</h3>
+              <div class="text-2xl font-black text-orange-500">CHF 95</div>
+            </div>
+            <div class="text-sm text-gray-600 mb-4">1 Std. 25 Min.</div>
+            <p class="text-gray-700 mb-6">Langanhaltende Gellackierung mit OPI GelColor System.</p>
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+               target="_blank"
+               class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold transition-colors">
+              MEHR ZUR LEISTUNG
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="service-card bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100" data-category="manikuere">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-gray-900">Maniküre/Gellack entfernen/Gellack neu</h3>
+              <div class="text-2xl font-black text-orange-500">CHF 110</div>
+            </div>
+            <div class="text-sm text-gray-600 mb-4">1 Std. 40 Min.</div>
+            <p class="text-gray-700 mb-6">Komplette Gellack-Erneuerung mit professioneller Entfernung.</p>
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+               target="_blank"
+               class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold transition-colors">
+              MEHR ZUR LEISTUNG
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Pediküre Services -->
+          <div class="service-card bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100" data-category="pediküre">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-gray-900">Kosmetische Fusspflege</h3>
+              <div class="text-2xl font-black text-orange-500">CHF 95</div>
+            </div>
+            <div class="text-sm text-gray-600 mb-4">55 Min.</div>
+            <p class="text-gray-700 mb-6">Professionelle Pflege für gesunde und gepflegte Füsse.</p>
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+               target="_blank"
+               class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold transition-colors">
+              MEHR ZUR LEISTUNG
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="service-card bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100" data-category="pediküre">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-gray-900">Kosmetische Fusspflege Peeling & Fussbad</h3>
+              <div class="text-2xl font-black text-orange-500">CHF 120</div>
+            </div>
+            <div class="text-sm text-gray-600 mb-4">1 Std. 10 Min.</div>
+            <p class="text-gray-700 mb-6">Verwöhnende Fusspflege mit entspannendem Peeling und Fussbad.</p>
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+               target="_blank"
+               class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold transition-colors">
+              MEHR ZUR LEISTUNG
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="service-card bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100" data-category="pediküre">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-gray-900">Kosmetische Fusspflege inkl. lackieren</h3>
+              <div class="text-2xl font-black text-orange-500">CHF 115</div>
+            </div>
+            <div class="text-sm text-gray-600 mb-4">1 Std. 10 Min.</div>
+            <p class="text-gray-700 mb-6">Fusspflege mit Lackierung. Flip-Flops für den Heimweg mitbringen!</p>
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+               target="_blank"
+               class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold transition-colors">
+              MEHR ZUR LEISTUNG
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="service-card bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100" data-category="pediküre">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-gray-900">Kosmetische Fusspflege mit Peeling & Fussbad und frisch lackieren (OPI)</h3>
+              <div class="text-2xl font-black text-orange-500">CHF 135</div>
+            </div>
+            <div class="text-sm text-gray-600 mb-4">1 Std. 25 Min.</div>
+            <p class="text-gray-700 mb-6">Vollbehandlung mit Peeling, Fussbad und OPI-Lackierung.</p>
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+               target="_blank"
+               class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold transition-colors">
+              MEHR ZUR LEISTUNG
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="service-card bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100" data-category="pediküre">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-gray-900">Kosmetische Fusspflege inkl. Nagellack entfernen und frisch lackieren (OPI)</h3>
+              <div class="text-2xl font-black text-orange-500">CHF 120</div>
+            </div>
+            <div class="text-sm text-gray-600 mb-4">1 Std. 15 Min.</div>
+            <p class="text-gray-700 mb-6">Fusspflege mit Lackentfernung und neuer OPI-Lackierung.</p>
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+               target="_blank"
+               class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold transition-colors">
+              MEHR ZUR LEISTUNG
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="service-card bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100" data-category="pediküre">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-gray-900">Kosmetische Fusspflege inkl. Nagellack entfernen mit Peeling & Fussbad und frisch lackieren (OPI)</h3>
+              <div class="text-2xl font-black text-orange-500">CHF 140</div>
+            </div>
+            <div class="text-sm text-gray-600 mb-4">1 Std. 25 Min.</div>
+            <p class="text-gray-700 mb-6">Premium-Behandlung mit allen Extras und OPI-Lackierung.</p>
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+               target="_blank"
+               class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold transition-colors">
+              MEHR ZUR LEISTUNG
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="service-card bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100" data-category="pediküre">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-gray-900">Fusspflege mit Gellack (OPI GelColor)</h3>
+              <div class="text-2xl font-black text-orange-500">CHF 125</div>
+            </div>
+            <div class="text-sm text-gray-600 mb-4">1 Std. 25 Min.</div>
+            <p class="text-gray-700 mb-6">Langanhaltende Gellack-Behandlung für die Füsse.</p>
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+               target="_blank"
+               class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold transition-colors">
+              MEHR ZUR LEISTUNG
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="service-card bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100" data-category="pediküre">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-gray-900">Fusspflege mit Peeling & Fussbad und Gellack lackieren (OPI GelColor)</h3>
+              <div class="text-2xl font-black text-orange-500">CHF 145</div>
+            </div>
+            <div class="text-sm text-gray-600 mb-4">1 Std. 40 Min.</div>
+            <p class="text-gray-700 mb-6">Premium Fusspflege mit Gellack-Finish und Wellness-Extras.</p>
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+               target="_blank"
+               class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold transition-colors">
+              MEHR ZUR LEISTUNG
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="service-card bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100" data-category="pediküre">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-gray-900">Fusspflege mit Gellack entfernen & Gellack lackieren (OPI GelColor)</h3>
+              <div class="text-2xl font-black text-orange-500">CHF 140</div>
+            </div>
+            <div class="text-sm text-gray-600 mb-4">1 Std. 40 Min.</div>
+            <p class="text-gray-700 mb-6">Gellack-Erneuerung mit professioneller Entfernung und Neuauftrag.</p>
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+               target="_blank"
+               class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold transition-colors">
+              MEHR ZUR LEISTUNG
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="service-card bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100" data-category="pediküre">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-gray-900">Fusspflege mit Gellack entfernen + Peeling & Fussbad und Gellack lackieren (OPI GelColor)</h3>
+              <div class="text-2xl font-black text-orange-500">CHF 160</div>
+            </div>
+            <div class="text-sm text-gray-600 mb-4">1 Std. 55 Min.</div>
+            <p class="text-gray-700 mb-6">Komplettbehandlung mit Gellack-Erneuerung und allen Wellness-Extras.</p>
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+               target="_blank"
+               class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold transition-colors">
+              MEHR ZUR LEISTUNG
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Additional Services -->
+          <div class="service-card bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100" data-category="pediküre">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-gray-900">Hornhaut entfernen und eincremen</h3>
+              <div class="text-2xl font-black text-orange-500">CHF 70</div>
+            </div>
+            <div class="text-sm text-gray-600 mb-4">25 Min.</div>
+            <p class="text-gray-700 mb-6">Gezielte Hornhautentfernung mit pflegender Creme.</p>
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+               target="_blank"
+               class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold transition-colors">
+              MEHR ZUR LEISTUNG
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="service-card bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100" data-category="pediküre">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-gray-900">Hornhaut entfernen, Peeling & Fussbad</h3>
+              <div class="text-2xl font-black text-orange-500">CHF 85</div>
+            </div>
+            <div class="text-sm text-gray-600 mb-4">40 Min.</div>
+            <p class="text-gray-700 mb-6">Erweiterte Hornhautbehandlung mit Wellness-Elementen.</p>
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+               target="_blank"
+               class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold transition-colors">
+              MEHR ZUR LEISTUNG
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="service-card bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100" data-category="pediküre">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-gray-900">Hühneraugen entfernen / pro Stück</h3>
+              <div class="text-2xl font-black text-orange-500">CHF 30</div>
+            </div>
+            <div class="text-sm text-gray-600 mb-4">15 Min.</div>
+            <p class="text-gray-700 mb-6">Professionelle Entfernung von Hühneraugen.</p>
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+               target="_blank"
+               class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold transition-colors">
+              MEHR ZUR LEISTUNG
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="service-card bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100" data-category="manikuere">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-gray-900">Gellack entfernen + Nägel kürzen & polieren</h3>
+              <div class="text-2xl font-black text-orange-500">CHF 60</div>
+            </div>
+            <div class="text-sm text-gray-600 mb-4">20 Min.</div>
+            <p class="text-gray-700 mb-6">Gellack-Entfernung mit Nagelpflege.</p>
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+               target="_blank"
+               class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold transition-colors">
+              MEHR ZUR LEISTUNG
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="service-card bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100" data-category="manikuere">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold text-gray-900">Gellack entfernen</h3>
+              <div class="text-2xl font-black text-orange-500">CHF 20</div>
+            </div>
+            <div class="text-sm text-gray-600 mb-4">10 Min.</div>
+            <p class="text-gray-700 mb-6">Nur mit einer Hauptleistung kombinierbar.</p>
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+               target="_blank"
+               class="inline-flex items-center text-orange-500 hover:text-orange-600 font-semibold transition-colors">
+              MEHR ZUR LEISTUNG
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+      
+      <!-- Bottom CTA -->
+      <div class="text-center mt-12 sm:mt-16 px-4">
+        <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+           target="_blank"
+           class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg sm:text-xl px-8 sm:px-12 py-4 sm:py-5 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 w-full sm:w-auto max-w-sm sm:max-w-none">
+          Jetzt Termin buchen
+        </a>
+        <p class="text-gray-600 mt-3 sm:mt-4 text-sm sm:text-base">Alle Preise verstehen sich in Schweizer Franken (CHF)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-orange-200 py-20 relative overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <picture>
+        <source srcset="https://res.cloudinary.com/dihw9b8ce/image/upload/f_webp,q_auto/v1758118278/IMG_9174_avqbll.jpg" type="image/webp">
+        <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/v1758118278/IMG_9174_avqbll.jpg" 
+             alt="Footer background" 
+             class="w-full h-full object-cover">
+      </picture>
+      <!-- Orange overlay to maintain footer styling -->
+      <div class="absolute inset-0 bg-orange-200/80"></div>
+    </div>
+    
+    <!-- Main Footer Content -->
+    <div class="relative">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- 3D Box Container -->
+        <div class="bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-4 sm:p-6 lg:p-12 border border-gray-100 transform perspective-1000" 
+             style="box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.8); transform: rotateX(2deg) translateZ(0);">
+          
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            
+            <!-- Brand Section -->
+            <div class="space-y-6">
+              <div>
+                <img src="https://static.wixstatic.com/media/a3b5c0_eb548c1e74764b1c9c8c61bcb9b0f0f4~mv2.png/v1/fill/w_210,h_138,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/GettyImages-1823979425_b.png" 
+                     alt="Fusspflege by Yana Logo" 
+                     class="h-16 w-auto mb-6">
+              </div>
+              <p class="text-gray-600 leading-relaxed text-lg">
+                Ihr vertrauensvoller Spezialist für professionelle Fusspflege und Maniküre.
+              </p>
+              <div class="flex items-center text-orange-500">
+                <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="font-medium text-gray-700">Professionell Zertifiziert</span>
+              </div>
+            </div>
+            
+            <!-- Contact Section -->
+            <div class="space-y-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-6">Kontakt</h3>
+              <div class="space-y-4">
+                <h4 class="font-semibold text-gray-900 text-lg">Fusspflege by Yana</h4>
+                
+                <div class="flex items-start text-gray-600">
+                  <svg class="w-6 h-6 mr-4 mt-1 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                  <div>
+                    <div class="font-medium">Kauffmannweg 14</div>
+                    <div>6003 Luzern, Schweiz</div>
+                  </div>
+                </div>
+                
+                <div class="flex items-center text-gray-600">
+                  <svg class="w-6 h-6 mr-4 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                  </svg>
+                  <a href="tel:0798978891" class="hover:text-orange-500 transition-colors font-medium">079 897 88 91</a>
+                </div>
+                
+                <div class="flex items-center text-gray-600">
+                  <svg class="w-6 h-6 mr-4 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                  </svg>
+                  <a href="mailto:info@fusspflegebyyana.ch" class="hover:text-orange-500 transition-colors font-medium">info@fusspflegebyyana.ch</a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Navigation Section -->
+            <div class="space-y-6">
+              <h3 class="text-2xl font-bold text-gray-900 mb-6">Navigation</h3>
+              <nav class="space-y-4">
+                <a href="/" class="block text-gray-600 hover:text-orange-500 transition-colors font-medium">Home</a>
+                <a href="/#about" class="block text-gray-600 hover:text-orange-500 transition-colors font-medium">Über Uns</a>
+                <a href="/treatments" class="block text-gray-600 hover:text-orange-500 transition-colors font-medium">Fusspflege & Maniküre</a>
+                <a href="/#reviews" class="block text-gray-600 hover:text-orange-500 transition-colors font-medium">Bewertungen</a>
+                <a href="/#contact" class="block text-gray-600 hover:text-orange-500 transition-colors font-medium">Kontakt</a>
+                <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+                   target="_blank" 
+                   class="block text-gray-600 hover:text-orange-500 transition-colors font-medium">Termin buchen</a>
+              </nav>
+              
+              <!-- Social Media -->
+              <div class="mt-8">
+                <div class="flex space-x-4">
+                  <a href="https://www.instagram.com/fusspflege_by_yana?igsh=ZDBhMXgwcXh2Y280" 
+                     target="_blank" 
+                     class="w-12 h-12 bg-gray-100 hover:bg-orange-500 rounded-xl flex items-center justify-center transition-all duration-300 group shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    <svg class="w-6 h-6 text-gray-600 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <!-- Bottom Border -->
+          <div class="border-t border-gray-200 mt-12 pt-8">
+            <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0 text-center sm:text-left">
+              <p class="text-gray-500 text-sm">
+                © 2024 Fusspflege by Yana. Alle Rechte vorbehalten.
+              </p>
+              <div class="flex space-x-6 text-sm text-gray-500">
+                <a href="#" class="hover:text-orange-500 transition-colors">Datenschutz</a>
+                <a href="#" class="hover:text-orange-500 transition-colors">Impressum</a>
+                <a href="#" class="hover:text-orange-500 transition-colors">AGB</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for filtering -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu functionality
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+      
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        mobileNavLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+          });
+        });
+      }
+
+      // Filter functionality
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const serviceCards = document.querySelectorAll('.service-card');
+      
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Remove active class from all buttons
+          filterButtons.forEach(btn => {
+            btn.classList.remove('active', 'bg-orange-500', 'text-white');
+            btn.classList.add('text-gray-600', 'hover:text-gray-900');
+          });
+          
+          // Add active class to clicked button
+          button.classList.add('active', 'bg-orange-500', 'text-white');
+          button.classList.remove('text-gray-600', 'hover:text-gray-900');
+          
+          const filter = button.getAttribute('data-filter');
+          
+          // Show/hide cards based on filter
+          serviceCards.forEach(card => {
+            const htmlCard = card as HTMLElement;
+            if (filter === 'all') {
+              htmlCard.style.display = 'block';
+            } else {
+              const category = card.getAttribute('data-category');
+              if (category === filter) {
+                htmlCard.style.display = 'block';
+              } else {
+                htmlCard.style.display = 'none';
+              }
+            }
+          });
+        });
+      });
+      
+      // Set initial active state
+      const initialButton = document.querySelector('.filter-btn[data-filter="all"]');
+      if (initialButton) {
+        initialButton.classList.add('bg-orange-500', 'text-white');
+        initialButton.classList.remove('text-gray-600');
+      }
+    });
+  </script>
+
+  <style>
+    .filter-btn {
+      @apply text-gray-600 hover:text-gray-900;
+    }
+    
+    .filter-btn.active {
+      @apply bg-orange-500 text-white;
+    }
+    
+    .service-card {
+      @apply hover:-translate-y-1;
+    }
+    
+    .fade-in-section {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.6s ease-out;
+    }
+  </style>
+</Layout>

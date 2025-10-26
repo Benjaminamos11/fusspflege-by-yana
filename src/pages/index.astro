@@ -6,19 +6,19 @@ import Layout from '../layouts/Layout.astro';
   <!-- Navigation -->
   <nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 fade-in-section">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center py-6">
+      <div class="flex justify-between items-center py-4">
         <!-- Logo -->
         <div class="flex-shrink-0">
           <img src="https://static.wixstatic.com/media/a3b5c0_eb548c1e74764b1c9c8c61bcb9b0f0f4~mv2.png/v1/fill/w_210,h_138,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/GettyImages-1823979425_b.png" 
                alt="Fusspflege by Yana Logo" 
-               class="h-14 sm:h-16 lg:h-18 w-auto">
+               class="h-18 sm:h-20 lg:h-24 w-auto">
         </div>
         
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-1 bg-gray-100 rounded-full p-1">
           <a href="#hero" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-orange-500 text-white shadow-sm">HOME</a>
           <a href="#about" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">ÜBER UNS</a>
-          <a href="#services" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">FUSSPFLEGE & MANIKÜRE</a>
+          <a href="/treatments" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">FUSSPFLEGE & MANIKÜRE</a>
           <a href="#reviews" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">BEWERTUNGEN</a>
           <a href="#contact" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">KONTAKT</a>
         </div>
@@ -38,7 +38,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="flex flex-col space-y-2 bg-gray-50 rounded-2xl p-4">
           <a href="#hero" class="nav-pill-mobile active px-4 py-3 rounded-full font-light text-sm transition-all duration-300 bg-orange-500 text-white mobile-nav-link">HOME</a>
           <a href="#about" class="nav-pill-mobile px-4 py-3 rounded-full font-light text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">ÜBER UNS</a>
-        <a href="#services" class="nav-pill-mobile px-4 py-3 rounded-full font-light text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">FUSSPFLEGE & MANIKÜRE</a>
+        <a href="/treatments" class="nav-pill-mobile px-4 py-3 rounded-full font-light text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">FUSSPFLEGE & MANIKÜRE</a>
         <a href="#reviews" class="nav-pill-mobile px-4 py-3 rounded-full font-light text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">BEWERTUNGEN</a>
         <a href="#contact" class="nav-pill-mobile px-4 py-3 rounded-full font-light text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">KONTAKT</a>
           <div class="pt-2 border-t border-gray-200 mt-2">
@@ -56,27 +56,32 @@ import Layout from '../layouts/Layout.astro';
     <!-- Full Banner Background Image -->
     <div class="absolute inset-0">
       <picture>
-        <source srcset="https://res.cloudinary.com/dihw9b8ce/image/upload/f_webp,q_auto/v1758094266/a-product-photograph-showcasing-a-curate_4gHskWNuSqCJK-zxxTzWZQ_ZfF6_tlXQo-4HdbcUoW1vQ_r13kdr.webp" type="image/webp">
-        <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/v1758094266/a-product-photograph-showcasing-a-curate_4gHskWNuSqCJK-zxxTzWZQ_ZfF6_tlXQo-4HdbcUoW1vQ_r13kdr.png" 
-             alt="Curated nail care and foot care products" 
+        <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto/v1761220541/WhatsApp_Image_2025-10-21_at_23.26.04_q9tsae.webp" type="image/webp">
+        <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/v1761220541/WhatsApp_Image_2025-10-21_at_23.26.04_q9tsae.jpg" 
+             alt="Professional nail care and foot care treatment" 
              class="w-full h-full object-cover">
       </picture>
+      <!-- Strong dark overlay for better text readability -->
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/60"></div>
     </div>
     
+    
     <!-- Hero Content -->
-    <div class="absolute inset-0 z-10 flex items-end pb-4 sm:pb-8">
-      <div class="pl-4 sm:pl-8 md:pl-12 lg:pl-16 xl:pl-20 max-w-xs sm:max-w-lg">
-        <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black tracking-widest mb-4 sm:mb-8 animate-fade-in-up text-black leading-tight sm:leading-none" style="font-family: 'Impact', 'Arial Black', sans-serif; text-transform: uppercase; letter-spacing: 0.1em sm:letter-spacing: 0.15em;">
-          Perfektion von Händen bis zu den Zehen
+    <div class="absolute inset-0 z-10 flex items-end pb-6 sm:pb-8 md:pb-12">
+      <div class="px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 w-full max-w-4xl">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black tracking-wide sm:tracking-widest mb-4 sm:mb-6 md:mb-8 animate-fade-in-up text-white leading-tight" style="font-family: 'Impact', 'Arial Black', sans-serif; text-transform: uppercase; letter-spacing: 0.05em sm:letter-spacing: 0.1em md:letter-spacing: 0.15em;">
+          Perfektion von Händen bis zu den <span class="text-orange-500">Zehen</span>
       </h1>
       
-        <p class="text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-normal mb-6 sm:mb-12 animate-fade-in-up text-gray-700 leading-relaxed tracking-wide" style="animation-delay: 0.2s; font-family: 'Courier New', 'Monaco', monospace;">
-        Professionelle Fusspflege und Maniküre in einer entspannten Atmosphäre.
+        <p class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-normal mb-6 sm:mb-8 md:mb-12 animate-fade-in-up text-white/95 leading-relaxed max-w-2xl" style="animation-delay: 0.2s; font-family: 'Courier New', 'Monaco', monospace;">
+        Von der ersten Berührung bis zum letzten Schliff – bei uns steht Hygiene an erster Stelle.<br class="hidden sm:block">
+        <span class="block sm:inline">Gönnen Sie sich Fusspflege und Maniküre auf höchstem Niveau – in wohltuender Atmosphäre.</span>
       </p>
       
         <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
            target="_blank"
-           class="btn-primary inline-block bg-white hover:bg-orange-50 text-orange-500 font-montserrat font-light text-sm px-8 py-3 rounded-full transition-all duration-300 animate-fade-in-up tracking-wide border border-orange-500 hover:border-2 hover:border-orange-600 shadow-sm"
+           class="btn-primary inline-block bg-white hover:bg-orange-50 text-orange-500 font-montserrat font-medium text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300 animate-fade-in-up border border-orange-500 hover:border-2 hover:border-orange-600 shadow-lg"
          style="animation-delay: 0.4s;">
         Jetzt Termin buchen
       </a>
@@ -92,6 +97,110 @@ import Layout from '../layouts/Layout.astro';
         <div class="w-4 h-5 bg-orange-400 rounded-full" style="border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;"></div>
         <!-- Drop 3 -->
         <div class="w-3 h-4 bg-orange-600 rounded-full" style="border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hygiene & Safety Section -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden fade-in-section">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        
+        
+        <!-- Main Content -->
+        <div class="text-center relative z-10">
+          
+          <!-- Heading -->
+          <div class="mb-12">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-widest mb-6 text-gray-900 leading-none" style="font-family: 'Impact', 'Arial Black', sans-serif; text-transform: uppercase; letter-spacing: 0.15em;">
+              Ihre Sicherheit liegt mir am Herzen
+            </h2>
+            <div class="w-24 h-1 bg-orange-500 mx-auto"></div>
+          </div>
+          
+          <!-- Content Card -->
+          <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-12 mx-auto max-w-4xl border border-gray-100 relative">
+            
+            <!-- Hygiene Icon -->
+            <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
+              <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+              </div>
+            </div>
+            
+            <!-- Text Content -->
+            <div class="space-y-6 text-gray-700 leading-relaxed">
+              <p class="text-lg sm:text-xl font-medium text-gray-900 mb-8">
+                Hygiene und Gesundheit haben für mich höchste Priorität.
+              </p>
+              
+              <p class="text-base sm:text-lg">
+                Deshalb arbeite ich ausschliesslich mit <strong class="text-orange-600">frisch desinfizierten Behandlungssets</strong> – 
+                bestehend aus Zange, Fräse, Schleifkappen und weiteren Instrumenten. Diese werden nach jeder 
+                Anwendung gründlich im modernen <strong class="text-orange-600">HYDRIM-Thermodesinfektor</strong> gereinigt.
+              </p>
+              
+              <p class="text-base sm:text-lg">
+                Auch sämtliche Arbeitsflächen werden nach jeder Behandlung sorgfältig desinfiziert, 
+                um Ihnen jederzeit eine <strong class="text-orange-600">sichere und hygienische Umgebung</strong> zu garantieren.
+              </p>
+            </div>
+            
+            <!-- Equipment Images - In Card -->
+            <div class="mt-8 mb-8 flex justify-center space-x-6">
+              <!-- HYDRIM Thermodesinfektor -->
+              <div class="group relative w-32 h-32 sm:w-40 sm:h-40 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/v1761220542/WhatsApp_Image_2025-10-21_at_23.32.45_d0lwir.jpg" 
+                     alt="HYDRIM Thermodesinfektor" 
+                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                <!-- Overlay that disappears on hover -->
+                <div class="absolute inset-0 bg-gray-900/40 group-hover:bg-transparent transition-all duration-300 flex items-end">
+                  <div class="p-3 w-full">
+                    <p class="text-white text-xs font-medium text-center opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+                      HYDRIM Desinfektor
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Hygiene Equipment -->
+              <div class="group relative w-32 h-32 sm:w-40 sm:h-40 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+                <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/v1761220542/WhatsApp_Image_2025-10-21_at_23.32.45_1_q7tibc.jpg" 
+                     alt="Moderne Hygiene Ausstattung" 
+                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                <!-- Overlay that disappears on hover -->
+                <div class="absolute inset-0 bg-gray-900/40 group-hover:bg-transparent transition-all duration-300 flex items-end">
+                  <div class="p-3 w-full">
+                    <p class="text-white text-xs font-medium text-center opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+                      Moderne Ausstattung
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Trust Indicators -->
+            <div class="mt-8 pt-6 border-t border-gray-100">
+              <div class="flex flex-wrap justify-center items-center gap-6 text-sm text-gray-600">
+                <div class="flex items-center space-x-2">
+                  <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span>Moderne Desinfektion</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span>Sterile Instrumente</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span>Hygienische Standards</span>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -207,6 +316,25 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
       </div>
+      
+      <!-- View All Treatments Button -->
+      <div class="flex justify-center mt-16">
+        <div class="text-center">
+          <a href="/treatments" 
+             class="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-base sm:text-lg group">
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 group-hover:scale-110 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0l-4-4m4 4l-4 4"/>
+            </svg>
+            <span>Alle Behandlungen ansehen</span>
+            <svg class="w-3 h-3 sm:w-4 sm:h-4 ml-2 sm:ml-3 transform group-hover:translate-x-1 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <p class="text-gray-600 mt-3 sm:mt-4 text-xs sm:text-sm text-center leading-relaxed max-w-md mx-auto">
+            Entdecken Sie unser vollständiges Angebot mit detaillierten Preisen und Behandlungsdauer
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -283,10 +411,13 @@ import Layout from '../layouts/Layout.astro';
             <!-- Portrait -->
             <div class="order-2 lg:order-1 flex justify-center items-start">
               <div class="aspect-square rounded-2xl shadow-lg overflow-hidden max-w-lg">
-                <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/v1758103788/78f05f94-a962-4cf6-8658-47edeb543d70_1_rlqujg.avif" 
-                     alt="Yana Otto - Inhaberin und Fusspflegerin" 
-                     class="w-full h-full object-cover"
-                     style="filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.15));">
+                <picture>
+                  <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto/v1761220542/WhatsApp_Image_2025-10-21_at_23.35.44_vg0lf7.webp" type="image/webp">
+                  <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/v1761220542/WhatsApp_Image_2025-10-21_at_23.35.44_vg0lf7.jpg" 
+                       alt="Yana Otto - Inhaberin und Fusspflegerin" 
+                       class="w-full h-full object-cover object-top"
+                       style="filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.15));">  
+                </picture>
               </div>
             </div>
           </div>
@@ -494,6 +625,35 @@ import Layout from '../layouts/Layout.astro';
         </div>
         
       </div>
+      
+      <!-- More Reviews Button -->
+      <div class="text-center mt-16">
+        <div class="mb-6">
+          <div class="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+            <div class="flex text-orange-500 text-sm">
+              <span>★★★★★</span>
+            </div>
+            <span class="text-gray-700 font-medium text-sm">Durchschnitt aus über 600 Bewertungen</span>
+          </div>
+        </div>
+        
+        <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+           target="_blank"
+           class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 group">
+          <svg class="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+          </svg>
+          Mehr als 600 Bewertungen ansehen
+          <svg class="w-4 h-4 ml-3 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+        
+        <p class="text-sm text-gray-600 mt-4 max-w-lg mx-auto">
+          Lesen Sie authentische Bewertungen von unseren zufriedenen Kunden und buchen Sie direkt Ihren Termin.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -577,7 +737,190 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="py-16 lg:py-24 bg-gradient-to-b from-white to-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black tracking-widest mb-6 text-gray-900 leading-none" 
+            style="font-family: 'Impact', 'Arial Black', sans-serif; text-transform: uppercase; letter-spacing: 0.15em;">
+          GALERIE STUDIO
+        </h2>
+        <div class="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
+        <p class="text-base text-gray-700 leading-relaxed max-w-2xl mx-auto">
+          Entdecken Sie unser professionelles Studio – ein Ort der Entspannung und Perfektion, 
+          wo höchste Hygienestandards auf eine wohltuende Atmosphäre treffen.
+        </p>
+      </div>
       
+      <!-- Gallery Grid -->
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-3">
+          <!-- Image 1 -->
+          <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 aspect-square">
+            <picture>
+              <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220130/PHOTO-2025-03-23-12-49-27_ifwjqo.webp" type="image/webp">
+              <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220130/PHOTO-2025-03-23-12-49-27_ifwjqo.jpg" 
+                   alt="Studio Galerie 1" 
+                   class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                   loading="lazy">
+            </picture>
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-orange-500/15 to-orange-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+
+          <!-- Image 2 -->
+          <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 aspect-square">
+            <picture>
+              <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220129/PHOTO-2025-03-23-12-49-27_3_1_f4llxc.webp" type="image/webp">
+              <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220129/PHOTO-2025-03-23-12-49-27_3_1_f4llxc.jpg" 
+                   alt="Studio Galerie 2" 
+                   class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                   loading="lazy">
+            </picture>
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-orange-500/15 to-orange-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+
+          <!-- Image 3 -->
+          <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 aspect-square">
+            <picture>
+              <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220126/PHOTO-2025-03-23-12-49-26_6_1_stguub.webp" type="image/webp">
+              <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220126/PHOTO-2025-03-23-12-49-26_6_1_stguub.jpg" 
+                   alt="Studio Galerie 3" 
+                   class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                   loading="lazy">
+            </picture>
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-orange-500/15 to-orange-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+
+          <!-- Image 4 -->
+          <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 aspect-square">
+            <picture>
+              <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220126/PHOTO-2025-03-23-12-49-27_1_1_g5n5av.webp" type="image/webp">
+              <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220126/PHOTO-2025-03-23-12-49-27_1_1_g5n5av.jpg" 
+                   alt="Studio Galerie 4" 
+                   class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                   loading="lazy">
+            </picture>
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-orange-500/15 to-orange-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+
+          <!-- Image 5 -->
+          <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 aspect-square">
+            <picture>
+              <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220124/PHOTO-2025-03-23-13-15-15_wycfbl.webp" type="image/webp">
+              <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220124/PHOTO-2025-03-23-13-15-15_wycfbl.jpg" 
+                   alt="Studio Galerie 5" 
+                   class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                   loading="lazy">
+            </picture>
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-orange-500/15 to-orange-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+
+          <!-- Image 6 -->
+          <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 aspect-square">
+            <picture>
+              <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220123/PHOTO-2025-03-23-13-13-17_v5mbmv.webp" type="image/webp">
+              <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220123/PHOTO-2025-03-23-13-13-17_v5mbmv.jpg" 
+                   alt="Studio Galerie 6" 
+                   class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                   loading="lazy">
+            </picture>
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-orange-500/15 to-orange-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+
+          <!-- Image 7 -->
+          <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 aspect-square">
+            <picture>
+              <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220122/PHOTO-2025-03-23-12-49-26_5_1_p2hgyr.webp" type="image/webp">
+              <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220122/PHOTO-2025-03-23-12-49-26_5_1_p2hgyr.jpg" 
+                   alt="Studio Galerie 7" 
+                   class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                   loading="lazy">
+            </picture>
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-orange-500/15 to-orange-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+
+          <!-- Image 8 -->
+          <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 aspect-square">
+            <picture>
+              <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220121/PHOTO-2025-03-23-12-49-26_4_1_eiraso.webp" type="image/webp">
+              <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220121/PHOTO-2025-03-23-12-49-26_4_1_eiraso.jpg" 
+                   alt="Studio Galerie 8" 
+                   class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                   loading="lazy">
+            </picture>
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-orange-500/15 to-orange-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+
+          <!-- Image 9 -->
+          <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 aspect-square">
+            <picture>
+              <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220120/PHOTO-2025-03-23-12-49-26_1_1_yuaiff.webp" type="image/webp">
+              <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220120/PHOTO-2025-03-23-12-49-26_1_1_yuaiff.jpg" 
+                   alt="Studio Galerie 9" 
+                   class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                   loading="lazy">
+            </picture>
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-orange-500/15 to-orange-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+
+          <!-- Image 10 -->
+          <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 aspect-square">
+            <picture>
+              <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220120/PHOTO-2025-03-23-12-59-37_1_xjvf4w.webp" type="image/webp">
+              <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220120/PHOTO-2025-03-23-12-59-37_1_xjvf4w.jpg" 
+                   alt="Studio Galerie 10" 
+                   class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                   loading="lazy">
+            </picture>
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-orange-500/15 to-orange-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+
+          <!-- Image 11 -->
+          <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 aspect-square">
+            <picture>
+              <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220120/PHOTO-2025-03-23-12-49-26_2_1_bgi2r0.webp" type="image/webp">
+              <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220120/PHOTO-2025-03-23-12-49-26_2_1_bgi2r0.jpg" 
+                   alt="Studio Galerie 11" 
+                   class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                   loading="lazy">
+            </picture>
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-orange-500/15 to-orange-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+
+          <!-- Image 12 -->
+          <div class="gallery-item group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 aspect-square">
+            <picture>
+              <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220121/PHOTO-2025-03-23-12-49-26_3_1_zoknwl.webp" type="image/webp">
+              <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220121/PHOTO-2025-03-23-12-49-26_3_1_zoknwl.jpg" 
+                   alt="Studio Galerie 12" 
+                   class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                   loading="lazy">
+            </picture>
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-orange-500/15 to-orange-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-20 lg:py-32 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto">
         <div class="space-y-12">
             
@@ -670,7 +1013,6 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
   </section>
-
   <!-- Footer -->
   <footer class="bg-orange-200 py-20 relative overflow-hidden">
     <!-- Background Image -->
@@ -712,7 +1054,7 @@ import Layout from '../layouts/Layout.astro';
               </div>
             </div>
             
-            <!-- Contact Section -->
+            
             <div class="space-y-6">
               <h3 class="text-2xl font-bold text-gray-900 mb-6">Kontakt</h3>
               <div class="space-y-4">

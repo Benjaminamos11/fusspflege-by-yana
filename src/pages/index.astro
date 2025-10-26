@@ -14,13 +14,25 @@ import Layout from '../layouts/Layout.astro';
                class="h-12 sm:h-16 md:h-18 lg:h-20 xl:h-24 w-auto">
         </div>
         
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center space-x-1 bg-gray-100 rounded-full p-1">
-          <a href="#hero" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-orange-500 text-white shadow-sm">HOME</a>
-          <a href="#about" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">ÜBER UNS</a>
-          <a href="#services" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">FUSSPFLEGE & MANIKÜRE</a>
-          <a href="#reviews" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">BEWERTUNGEN</a>
-          <button id="gutscheine-btn" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900 cursor-pointer">GUTSCHEINE</button>
+        <!-- Center Content Container -->
+        <div class="hidden md:flex items-center justify-center flex-1 max-w-4xl mx-auto">
+          <!-- Desktop Navigation -->
+          <div class="flex items-center space-x-1 bg-gray-100 rounded-full p-1">
+            <a href="#hero" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-orange-500 text-white shadow-sm">HOME</a>
+            <a href="#about" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">ÜBER UNS</a>
+            <a href="#services" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">FUSSPFLEGE & MANIKÜRE</a>
+            <a href="#reviews" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">BEWERTUNGEN</a>
+            <button id="gutscheine-btn" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900 cursor-pointer">GUTSCHEINE</button>
+          </div>
+        </div>
+        
+        <!-- Right Side Button -->
+        <div class="hidden md:flex flex-shrink-0">
+          <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+             target="_blank"
+             class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm">
+            Termin vereinbaren
+          </a>
         </div>
         
         <!-- Mobile menu button -->
@@ -61,17 +73,17 @@ import Layout from '../layouts/Layout.astro';
              alt="Professional nail care and foot care treatment" 
              class="w-full h-full object-cover">
       </picture>
-      <!-- Strong dark overlay for better text readability -->
-      <div class="absolute inset-0 bg-black/50"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/60"></div>
+      <!-- Lighter greyish overlay for better text readability -->
+      <div class="absolute inset-0 bg-gray-900/30"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900/15 to-gray-900/40"></div>
     </div>
     
     
     <!-- Hero Content -->
     <div class="absolute inset-0 z-10 flex items-center sm:items-end pb-6 sm:pb-8 md:pb-12">
       <div class="px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 w-full max-w-4xl text-center sm:text-left">
-        <h1 class="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black tracking-wide sm:tracking-widest mb-3 sm:mb-6 md:mb-8 animate-fade-in-up text-white leading-tight" style="font-family: 'Impact', 'Arial Black', sans-serif; text-transform: uppercase; letter-spacing: 0.05em;">
-          Perfektion von Händen bis zu den <span class="text-orange-500">Zehen</span>
+        <h1 class="text-xl xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black tracking-wide sm:tracking-widest mb-3 sm:mb-6 md:mb-8 animate-fade-in-up text-white leading-tight" style="font-family: 'Impact', 'Arial Black', sans-serif; text-transform: uppercase; letter-spacing: 0.05em;">
+          Perfektion von den Händen bis zu den Zehen für <span class="text-orange-500">Mann und Frau</span>
         </h1>
       
         <p class="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-normal mb-4 sm:mb-8 md:mb-12 animate-fade-in-up text-white/95 leading-relaxed max-w-2xl mx-auto sm:mx-0" style="animation-delay: 0.2s; font-family: 'Courier New', 'Monaco', monospace;">
@@ -1677,6 +1689,32 @@ import Layout from '../layouts/Layout.astro';
       .xs\:py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
     }
     
+    /* Desktop hero title sizing */
+    @media (min-width: 769px) {
+      #hero h1 {
+        font-size: 3rem; /* Ensure desktop gets proper size */
+        line-height: 1.1;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      #hero h1 {
+        font-size: 4rem;
+      }
+    }
+    
+    @media (min-width: 1280px) {
+      #hero h1 {
+        font-size: 5rem;
+      }
+    }
+    
+    @media (min-width: 1536px) {
+      #hero h1 {
+        font-size: 6rem;
+      }
+    }
+
     /* Mobile Navigation Enhancements */
     @media (max-width: 768px) {
       .mobile-nav-link {
@@ -1693,6 +1731,7 @@ import Layout from '../layouts/Layout.astro';
       #hero h1 {
         line-height: 1.1;
         margin-bottom: 1rem;
+        font-size: 1.5rem !important; /* Override for mobile */
       }
       
       #hero p {

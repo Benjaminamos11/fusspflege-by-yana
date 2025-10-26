@@ -16,13 +16,25 @@ import Layout from '../layouts/Layout.astro';
           </a>
         </div>
         
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center space-x-1 bg-gray-100 rounded-full p-1">
-          <a href="/" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">HOME</a>
-          <a href="/#about" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">ÜBER UNS</a>
-          <a href="/#services" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-orange-500 text-white shadow-sm">FUSSPFLEGE & MANIKÜRE</a>
-          <a href="/#reviews" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">BEWERTUNGEN</a>
-          <a href="/#gutscheine" onclick="window.parent.postMessage('openGutscheineModal', '*')" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900 cursor-pointer">GUTSCHEINE</a>
+        <!-- Center Content Container -->
+        <div class="hidden md:flex items-center justify-center flex-1 max-w-4xl mx-auto">
+          <!-- Desktop Navigation -->
+          <div class="flex items-center space-x-1 bg-gray-100 rounded-full p-1">
+            <a href="/" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">HOME</a>
+            <a href="/#about" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">ÜBER UNS</a>
+            <a href="/#services" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-orange-500 text-white shadow-sm">FUSSPFLEGE & MANIKÜRE</a>
+            <a href="/#reviews" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">BEWERTUNGEN</a>
+            <a href="/#gutscheine" onclick="window.parent.postMessage('openGutscheineModal', '*')" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900 cursor-pointer">GUTSCHEINE</a>
+          </div>
+        </div>
+        
+        <!-- Right Side Button -->
+        <div class="hidden md:flex flex-shrink-0">
+          <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
+             target="_blank"
+             class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm">
+            Termin vereinbaren
+          </a>
         </div>
         
         <!-- Mobile menu button -->

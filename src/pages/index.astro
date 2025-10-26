@@ -18,9 +18,9 @@ import Layout from '../layouts/Layout.astro';
         <div class="hidden md:flex items-center space-x-1 bg-gray-100 rounded-full p-1">
           <a href="#hero" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-orange-500 text-white shadow-sm">HOME</a>
           <a href="#about" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">ÜBER UNS</a>
-          <a href="/treatments" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">FUSSPFLEGE & MANIKÜRE</a>
+          <a href="#services" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">FUSSPFLEGE & MANIKÜRE</a>
           <a href="#reviews" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">BEWERTUNGEN</a>
-          <a href="#contact" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">KONTAKT</a>
+          <button id="gutscheine-btn" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900 cursor-pointer">GUTSCHEINE</button>
         </div>
         
         <!-- Mobile menu button -->
@@ -38,9 +38,9 @@ import Layout from '../layouts/Layout.astro';
         <div class="flex flex-col space-y-1 bg-gray-50 rounded-2xl p-3">
           <a href="#hero" class="nav-pill-mobile active px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-orange-500 text-white mobile-nav-link">HOME</a>
           <a href="#about" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">ÜBER UNS</a>
-          <a href="/treatments" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">FUSSPFLEGE & MANIKÜRE</a>
+          <a href="#services" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">FUSSPFLEGE & MANIKÜRE</a>
           <a href="#reviews" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">BEWERTUNGEN</a>
-          <a href="#contact" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">KONTAKT</a>
+          <button id="gutscheine-btn-mobile" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link w-full text-left">GUTSCHEINE</button>
           <div class="pt-2 border-t border-gray-200 mt-1">
             <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" target="_blank" class="bg-white hover:bg-orange-50 text-orange-500 px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 text-center block mobile-nav-link border border-orange-500 hover:border-2 hover:border-orange-600">
               Termin buchen
@@ -1133,6 +1133,123 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </footer>
 
+  <!-- Gutscheine Modal -->
+  <div id="gutscheine-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+      <!-- Modal Header -->
+      <div class="bg-orange-500 text-white p-6 rounded-t-2xl">
+        <div class="flex justify-between items-center">
+          <h2 class="text-2xl font-bold">Gutschein bestellen</h2>
+          <button id="close-modal" class="text-white hover:text-gray-200 text-2xl font-bold">
+            ×
+          </button>
+        </div>
+        <p class="mt-2 text-orange-100">Verschenken Sie Wellness und Entspannung</p>
+      </div>
+
+      <!-- Modal Content -->
+      <div class="p-6">
+        <form id="gutscheine-form" class="space-y-6">
+          <!-- Gutschein Selection -->
+          <div>
+            <label class="block text-sm font-semibold text-gray-900 mb-3">Gutschein-Wert auswählen *</label>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <label class="gutschein-option cursor-pointer">
+                <input type="radio" name="gutschein_wert" value="100" class="sr-only">
+                <div class="border-2 border-gray-200 rounded-lg p-4 text-center hover:border-orange-500 transition-colors">
+                  <div class="text-2xl font-bold text-orange-500">CHF 100</div>
+                  <div class="text-sm text-gray-600 mt-1">Basis Gutschein</div>
+                </div>
+              </label>
+              <label class="gutschein-option cursor-pointer">
+                <input type="radio" name="gutschein_wert" value="150" class="sr-only">
+                <div class="border-2 border-gray-200 rounded-lg p-4 text-center hover:border-orange-500 transition-colors">
+                  <div class="text-2xl font-bold text-orange-500">CHF 150</div>
+                  <div class="text-sm text-gray-600 mt-1">Premium Gutschein</div>
+                </div>
+              </label>
+              <label class="gutschein-option cursor-pointer">
+                <input type="radio" name="gutschein_wert" value="200" class="sr-only">
+                <div class="border-2 border-gray-200 rounded-lg p-4 text-center hover:border-orange-500 transition-colors">
+                  <div class="text-2xl font-bold text-orange-500">CHF 200</div>
+                  <div class="text-sm text-gray-600 mt-1">Deluxe Gutschein</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Personal Information -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="vorname" class="block text-sm font-semibold text-gray-900 mb-2">Vorname *</label>
+              <input type="text" id="vorname" name="vorname" required 
+                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors">
+            </div>
+            <div>
+              <label for="nachname" class="block text-sm font-semibold text-gray-900 mb-2">Nachname *</label>
+              <input type="text" id="nachname" name="nachname" required 
+                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors">
+            </div>
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-semibold text-gray-900 mb-2">E-Mail *</label>
+            <input type="email" id="email" name="email" required 
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors">
+          </div>
+
+          <div>
+            <label for="telefon" class="block text-sm font-semibold text-gray-900 mb-2">Telefon *</label>
+            <input type="tel" id="telefon" name="telefon" required 
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors">
+          </div>
+
+          <div>
+            <label for="adresse" class="block text-sm font-semibold text-gray-900 mb-2">Adresse *</label>
+            <textarea id="adresse" name="adresse" required rows="3"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"></textarea>
+          </div>
+
+          <!-- Gift Recipient (Optional) -->
+          <div>
+            <label for="empfaenger" class="block text-sm font-semibold text-gray-900 mb-2">Name Gutschein-Empfänger (optional)</label>
+            <input type="text" id="empfaenger" name="empfaenger" 
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                   placeholder="Für wen ist der Gutschein bestimmt?">
+          </div>
+
+          <div>
+            <label for="nachricht" class="block text-sm font-semibold text-gray-900 mb-2">Nachricht (optional)</label>
+            <textarea id="nachricht" name="nachricht" rows="4"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                      placeholder="Persönliche Nachricht für den Gutschein..."></textarea>
+          </div>
+
+          <!-- Terms & Conditions -->
+          <div class="flex items-start space-x-3">
+            <input type="checkbox" id="agb_accepted" name="agb_accepted" required 
+                   class="mt-1 h-4 w-4 text-orange-500 focus:ring-orange-500 border-gray-300 rounded">
+            <label for="agb_accepted" class="text-sm text-gray-700 leading-relaxed">
+              Ich akzeptiere die <a href="/agb" target="_blank" class="text-orange-500 hover:text-orange-600 underline">Allgemeinen Geschäftsbedingungen</a> und die <a href="/datenschutz" target="_blank" class="text-orange-500 hover:text-orange-600 underline">Datenschutzerklärung</a> *
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="flex flex-col sm:flex-row gap-3 pt-4">
+            <button type="button" id="cancel-btn" 
+                    class="flex-1 px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-colors font-medium">
+              Abbrechen
+            </button>
+            <button type="submit" 
+                    class="flex-1 px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg transition-colors font-bold shadow-lg hover:shadow-xl">
+              Gutschein bestellen
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <!-- Custom Instagram Feed Script -->
   <script>
     // Custom Instagram Feed Integration
@@ -1406,6 +1523,148 @@ import Layout from '../layouts/Layout.astro';
         reviewsObserver.observe(reviewsSection);
       }
     });
+
+    // Gutscheine Modal Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const modal = document.getElementById('gutscheine-modal');
+      const gutscheineBtn = document.getElementById('gutscheine-btn');
+      const gutscheineBtnMobile = document.getElementById('gutscheine-btn-mobile');
+      const closeModal = document.getElementById('close-modal');
+      const cancelBtn = document.getElementById('cancel-btn');
+      const form = document.getElementById('gutscheine-form') as HTMLFormElement;
+      const gutscheinOptions = document.querySelectorAll('.gutschein-option');
+
+      // Open modal
+      function openModal() {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+
+      // Close modal
+      function closeModalFunc() {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+        // Reset form
+        if (form) {
+          form.reset();
+        }
+        // Reset voucher selection styling
+        gutscheinOptions.forEach(option => {
+          option.querySelector('div')?.classList.remove('border-orange-500', 'bg-orange-50');
+          option.querySelector('div')?.classList.add('border-gray-200');
+        });
+      }
+
+      // Event listeners for opening modal
+      if (gutscheineBtn) {
+        gutscheineBtn.addEventListener('click', openModal);
+      }
+      if (gutscheineBtnMobile) {
+        gutscheineBtnMobile.addEventListener('click', function() {
+          // Close mobile menu first
+          const mobileMenu = document.getElementById('mobile-menu');
+          if (mobileMenu) {
+            mobileMenu.classList.add('hidden');
+          }
+          openModal();
+        });
+      }
+
+      // Event listeners for closing modal
+      if (closeModal) {
+        closeModal.addEventListener('click', closeModalFunc);
+      }
+      if (cancelBtn) {
+        cancelBtn.addEventListener('click', closeModalFunc);
+      }
+
+      // Close modal when clicking outside
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          closeModalFunc();
+        }
+      });
+
+      // Close modal with ESC key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          closeModalFunc();
+        }
+      });
+
+      // Handle voucher option selection
+      gutscheinOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          // Remove selection from all options
+          gutscheinOptions.forEach(opt => {
+            opt.querySelector('div').classList.remove('border-orange-500', 'bg-orange-50');
+            opt.querySelector('div').classList.add('border-gray-200');
+            opt.querySelector('input').checked = false;
+          });
+          
+          // Add selection to clicked option
+          const div = this.querySelector('div');
+          const input = this.querySelector('input');
+          div.classList.remove('border-gray-200');
+          div.classList.add('border-orange-500', 'bg-orange-50');
+          input.checked = true;
+        });
+      });
+
+      // Handle form submission
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Get form data
+          const formData = new FormData(form);
+          const data = Object.fromEntries(formData);
+        
+        // Basic validation
+        if (!data.gutschein_wert) {
+          alert('Bitte wählen Sie einen Gutschein-Wert aus.');
+          return;
+        }
+        
+        if (!data.agb_accepted) {
+          alert('Bitte akzeptieren Sie die AGB und Datenschutzerklärung.');
+          return;
+        }
+
+        // Create email body
+        let emailBody = `Gutschein-Bestellung:\n\n`;
+        emailBody += `Gutschein-Wert: CHF ${data.gutschein_wert}\n`;
+        emailBody += `Vorname: ${data.vorname}\n`;
+        emailBody += `Nachname: ${data.nachname}\n`;
+        emailBody += `E-Mail: ${data.email}\n`;
+        emailBody += `Telefon: ${data.telefon}\n`;
+        emailBody += `Adresse: ${data.adresse}\n`;
+        
+        if (data.empfaenger) {
+          emailBody += `Gutschein-Empfänger: ${data.empfaenger}\n`;
+        }
+        
+        if (data.nachricht) {
+          emailBody += `Nachricht: ${data.nachricht}\n`;
+        }
+        
+        emailBody += `\nAGB akzeptiert: Ja`;
+
+        // Create mailto link
+        const subject = `Gutschein-Bestellung - CHF ${data.gutschein_wert}`;
+        const mailto = `mailto:info@fusspflegebyyana.ch?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+        
+        // Open email client
+        window.location.href = mailto;
+        
+        // Show success message
+        alert('Vielen Dank für Ihre Bestellung! Ihr E-Mail-Programm wird geöffnet. Bitte senden Sie die E-Mail ab, um die Bestellung abzuschließen.');
+        
+        // Close modal
+        closeModalFunc();
+        });
+      }
+    });
   </script>
 
   <!-- Custom Mobile Styles -->
@@ -1465,6 +1724,46 @@ import Layout from '../layouts/Layout.astro';
         font-size: 0.75rem !important;
         padding: 0.5rem 1rem !important;
       }
+    }
+
+    /* Gutscheine Modal Styles */
+    .gutschein-option input:checked + div {
+      border-color: #f97316 !important;
+      background-color: #fff7ed !important;
+    }
+
+    .gutschein-option:hover div {
+      border-color: #f97316 !important;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.15);
+    }
+
+    /* Modal animation */
+    #gutscheine-modal {
+      backdrop-filter: blur(4px);
+    }
+
+    #gutscheine-modal > div {
+      animation: modalSlideIn 0.3s ease-out;
+    }
+
+    @keyframes modalSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Focus styles for form elements */
+    .form-input:focus {
+      outline: none;
+      ring: 2px;
+      ring-color: #f97316;
+      border-color: #f97316;
     }
   </style>
 </Layout>

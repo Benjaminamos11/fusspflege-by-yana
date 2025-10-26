@@ -20,9 +20,9 @@ import Layout from '../layouts/Layout.astro';
         <div class="hidden md:flex items-center space-x-1 bg-gray-100 rounded-full p-1">
           <a href="/" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">HOME</a>
           <a href="/#about" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">ÜBER UNS</a>
-          <a href="/treatments" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-orange-500 text-white shadow-sm">FUSSPFLEGE & MANIKÜRE</a>
+          <a href="/#services" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-orange-500 text-white shadow-sm">FUSSPFLEGE & MANIKÜRE</a>
           <a href="/#reviews" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">BEWERTUNGEN</a>
-          <a href="/#contact" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">KONTAKT</a>
+          <a href="/#gutscheine" onclick="window.parent.postMessage('openGutscheineModal', '*')" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900 cursor-pointer">GUTSCHEINE</a>
         </div>
         
         <!-- Mobile menu button -->
@@ -40,9 +40,9 @@ import Layout from '../layouts/Layout.astro';
         <div class="flex flex-col space-y-1 bg-gray-50 rounded-2xl p-3">
           <a href="/" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">HOME</a>
           <a href="/#about" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">ÜBER UNS</a>
-          <a href="/treatments" class="nav-pill-mobile active px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-orange-500 text-white mobile-nav-link">FUSSPFLEGE & MANIKÜRE</a>
+          <a href="/#services" class="nav-pill-mobile active px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-orange-500 text-white mobile-nav-link">FUSSPFLEGE & MANIKÜRE</a>
           <a href="/#reviews" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">BEWERTUNGEN</a>
-          <a href="/#contact" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">KONTAKT</a>
+          <a href="/#gutscheine" onclick="window.parent.postMessage('openGutscheineModal', '*')" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">GUTSCHEINE</a>
           <div class="pt-2 border-t border-gray-200 mt-1">
             <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" target="_blank" class="bg-white hover:bg-orange-50 text-orange-500 px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 text-center block mobile-nav-link border border-orange-500 hover:border-2 hover:border-orange-600">
               Termin buchen

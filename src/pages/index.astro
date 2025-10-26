@@ -101,7 +101,7 @@ import Layout from '../layouts/Layout.astro';
     </div>
     
     <!-- Orange Underline Decorative Elements -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle">
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle w-full flex justify-center">
       <div class="flex space-x-3 sm:space-x-4">
         <!-- Drop 1 -->
         <div class="w-6 h-8 sm:w-8 sm:h-10 bg-orange-500 rounded-full shadow-lg" style="border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;"></div>
@@ -996,7 +996,7 @@ import Layout from '../layouts/Layout.astro';
               </div>
               
               <!-- Inline Contact Form (initially hidden) -->
-              <div id="contact-form-container" class="hidden mt-8">
+              <div id="contact-form-container" class="hidden mt-8 w-full max-w-2xl mx-auto">
                 <div class="bg-white rounded-2xl shadow-xl p-6 sm:p-8 border border-gray-100">
                   <h3 class="text-xl font-bold text-gray-900 mb-6 text-center">Kontaktieren Sie uns</h3>
                   <form id="contact-form" name="contact" method="POST" data-netlify="true" class="space-y-6">
@@ -1613,8 +1613,13 @@ import Layout from '../layouts/Layout.astro';
 
       // Show contact form
       function showContactForm() {
-        contactFormContainer.classList.remove('hidden');
-        contactFormContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (contactFormContainer) {
+          contactFormContainer.classList.remove('hidden');
+          // Ensure it's visible and properly positioned on mobile
+          setTimeout(() => {
+            contactFormContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 100);
+        }
       }
 
       // Hide contact form

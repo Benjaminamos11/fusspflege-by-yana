@@ -10,9 +10,9 @@ import Layout from '../layouts/Layout.astro';
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
   <!-- Performance: Font preloading and optimization -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap" as="style">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap" as="style">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap"></noscript>
   
   <!-- Critical CSS - Inline above the fold styles -->
   <style>
@@ -25,6 +25,9 @@ import Layout from '../layouts/Layout.astro';
     /* Swiss font classes */
     .font-swiss-display { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
     .font-swiss-body { font-family: 'Source Sans Pro', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+    
+    /* Luxury script font for headlines */
+    .font-luxury { font-family: 'Dancing Script', 'Brush Script MT', cursive; font-weight: 500; }
     
     /* Animation optimization */
     .fade-in-section { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
@@ -121,7 +124,7 @@ import Layout from '../layouts/Layout.astro';
     <!-- Hero Content -->
     <div class="absolute inset-0 z-10 flex items-center sm:items-end pb-6 sm:pb-8 md:pb-12">
       <div class="px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 w-full max-w-4xl text-center sm:text-left">
-        <h1 class="font-swiss-display text-xl xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black tracking-wide sm:tracking-wider mb-3 sm:mb-6 md:mb-8 animate-fade-in-up text-white leading-tight" style="text-transform: uppercase; letter-spacing: 0.02em; font-weight: 800;">
+        <h1 class="font-luxury text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl mb-3 sm:mb-6 md:mb-8 animate-fade-in-up text-white leading-relaxed" style="font-weight: 600;">
           Perfektion von den Händen bis zu den Zehen für <span class="text-orange-500 italic">Frau & Mann</span>
         </h1>
       
@@ -163,7 +166,7 @@ import Layout from '../layouts/Layout.astro';
           
           <!-- Heading -->
           <div class="mb-12">
-            <h2 class="font-swiss-display text-3xl sm:text-4xl lg:text-5xl font-black tracking-wider mb-6 text-gray-900 leading-none" style="text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800;">
+            <h2 class="font-luxury text-4xl sm:text-5xl lg:text-6xl mb-6 text-gray-900 leading-relaxed" style="font-weight: 600;">
               Ihre Sicherheit liegt mir am Herzen
             </h2>
             <div class="w-24 h-1 bg-orange-500 mx-auto"></div>
@@ -273,7 +276,7 @@ import Layout from '../layouts/Layout.astro';
   <section id="services" class="py-20 lg:py-32 bg-white fade-in-section">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <h2 class="font-swiss-display text-3xl sm:text-4xl lg:text-5xl font-black tracking-wider mb-6 text-black leading-none" style="text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800;">
+        <h2 class="font-luxury text-4xl sm:text-5xl lg:text-6xl mb-6 text-black leading-relaxed" style="font-weight: 600;">
           Unsere Behandlungen
         </h2>
         <div class="w-24 h-1 bg-orange-500 mx-auto"></div>
@@ -436,7 +439,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
-          <h2 class="font-swiss-display text-3xl sm:text-4xl lg:text-5xl font-black tracking-wider mb-6 text-black leading-none" style="text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800;">
+          <h2 class="font-luxury text-4xl sm:text-5xl lg:text-6xl mb-6 text-black leading-relaxed" style="font-weight: 600;">
             Unser Team
           </h2>
           <div class="w-24 h-1 bg-orange-500 mx-auto"></div>
@@ -581,7 +584,7 @@ import Layout from '../layouts/Layout.astro';
     </div>
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center mb-20">
-        <h2 class="font-swiss-display text-3xl sm:text-4xl lg:text-5xl font-black tracking-wider mb-6 text-black leading-none" style="text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800;">
+        <h2 class="font-luxury text-4xl sm:text-5xl lg:text-6xl mb-6 text-black leading-relaxed" style="font-weight: 600;">
           Kundenbewertungen
         </h2>
         <div class="w-24 h-1 bg-orange-500 mx-auto"></div>
@@ -758,7 +761,7 @@ import Layout from '../layouts/Layout.astro';
   <section id="contact" class="py-20 lg:py-32 bg-white fade-in-section">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-20">
-        <h2 class="font-swiss-display text-2xl sm:text-3xl lg:text-4xl font-black tracking-wider mb-6 text-black leading-none" style="text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800;">
+        <h2 class="font-luxury text-3xl sm:text-4xl lg:text-5xl mb-6 text-black leading-relaxed" style="font-weight: 600;">
           Wir freuen uns auf Sie!
         </h2>
         <div class="w-24 h-1 bg-orange-500 mx-auto"></div>
@@ -868,8 +871,8 @@ import Layout from '../layouts/Layout.astro';
   <section class="py-16 lg:py-24 bg-gradient-to-b from-white to-gray-50">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="font-swiss-display text-2xl sm:text-3xl lg:text-4xl font-black tracking-wider mb-6 text-gray-900 leading-none" 
-            style="text-transform: uppercase; letter-spacing: 0.08em; font-weight: 800;">
+        <h2 class="font-luxury text-3xl sm:text-4xl lg:text-5xl mb-6 text-gray-900 leading-relaxed" 
+            style="font-weight: 600;">
           GALERIE STUDIO
         </h2>
         <div class="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>

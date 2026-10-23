@@ -2,9 +2,20 @@
 export interface Props {
   title: string;
   description?: string;
+  image?: string;
 }
 
-const { title, description = "Professionelle Fusspflege und Maniküre in einer entspannten Atmosphäre" } = Astro.props;
+const SITE = 'https://fusspflegebyyana.ch';
+const DEFAULT_IMAGE = 'https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_1920,h_960,f_webp,q_80/v1758107007/a-clean-luxury-editorial-photograph-show_4TEXiZVrQtCoFkjgu5kqKA_iCUF29uHTp-svv8760VT0w_yrqk8a.webp';
+
+const {
+  title,
+  description = "Professionelle Fusspflege und Maniküre in einer entspannten Atmosphäre",
+  image = DEFAULT_IMAGE,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, SITE).href;
+const FONTS_HREF = "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Bodoni+Moda:wght@400;500;600;700&display=swap";
 ---
 
 <!DOCTYPE html>
@@ -13,30 +24,65 @@ const { title, description = "Professionelle Fusspflege und Maniküre in einer e
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Bodoni+Moda:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href={FONTS_HREF} onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href={FONTS_HREF}></noscript>
     
-    <!-- Meta tags for SEO -->
+    <!-- Meta tags for SEO / social sharing -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Fusspflege by Yana" />
+    <meta property="og:locale" content="de_CH" />
+    <meta property="og:image" content={image} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
     
     <title>{title}</title>
+    <slot name="head" />
+
+    <style is:global>
+      /* Long words never overflow their container. Automatic hyphenation (lang="de" is set on <html>)
+         is opt-in via .hyphenate, because it makes lines reflow when the web font swaps in (layout shift). */
+      h1, h2, h3, h4, p, li, blockquote, dd, figcaption {
+        overflow-wrap: break-word;
+      }
+      .hyphenate, .hyphenate p, .hyphenate li, .hyphenate h2, .hyphenate h3 {
+        hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphenate-limit-chars: 8 4 4;
+      }
+
+      /* Long URLs and e-mail addresses inside running text may wrap anywhere */
+      p a, li a, dd a {
+        overflow-wrap: anywhere;
+      }
+
+      /* After jumping to an anchor, the section heading must clear the fixed navigation */
+      section[id] {
+        scroll-margin-top: 2rem;
+      }
+    </style>
 
     <style>
       html {
         scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
       }
       
       body {
         font-family: 'Lato', sans-serif;
       }
-      
+
       .font-montserrat {
         font-family: 'Montserrat', sans-serif;
       }
@@ -99,9 +145,9 @@ const { title, description = "Professionelle Fusspflege und Maniküre in einer e
   </head>
   
   <body class="bg-background text-text font-lato">
-    <main class="overflow-x-hidden">
+    <div class="overflow-x-hidden">
       <slot />
-    </main>
+    </div>
 
     <script>
       // Smooth scrolling for anchor links
@@ -120,6 +166,17 @@ const { title, description = "Professionelle Fusspflege und Maniküre in einer e
           }
         });
       });
+
+      // Keep aria-expanded of the mobile menu button in sync with the menu state
+      const menuButton = document.getElementById('mobile-menu-button');
+      const menuPanel = document.getElementById('mobile-menu');
+      if (menuButton && menuPanel) {
+        const syncExpanded = () => menuButton.setAttribute('aria-expanded', String(!menuPanel.classList.contains('hidden')));
+        menuButton.setAttribute('aria-controls', 'mobile-menu');
+        menuButton.addEventListener('click', () => setTimeout(syncExpanded, 0));
+        menuPanel.addEventListener('click', () => setTimeout(syncExpanded, 0));
+        syncExpanded();
+      }
 
       // Intersection Observer for fade-in animations
       const observerOptions = {

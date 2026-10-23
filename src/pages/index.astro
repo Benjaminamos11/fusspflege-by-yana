@@ -2,7 +2,38 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Fusspflege by Yana - Professionelle Fusspflege und Maniküre">
+<Layout
+  title="Fusspflege by Yana - Professionelle Fusspflege und Maniküre"
+  description="Fusspflege und Maniküre in Luzern: kosmetische Fusspflege, Maniküre und Gellack mit höchsten Hygienestandards in entspannter Atmosphäre. Jetzt online Termin buchen."
+>
+  <Fragment slot="head">
+    <link rel="preload" as="image" type="image/webp" fetchpriority="high" href="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto/v1761811378/WhatsApp_Image_2025-10-30_at_05.38.23_x3lscx.webp">
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "HealthAndBeautyBusiness",
+        "name": "Fusspflege by Yana",
+        "url": "https://fusspflegebyyana.ch/",
+        "image": "https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_1920,h_960,f_webp,q_80/v1758107007/a-clean-luxury-editorial-photograph-show_4TEXiZVrQtCoFkjgu5kqKA_iCUF29uHTp-svv8760VT0w_yrqk8a.webp",
+        "telephone": "+41798978891",
+        "email": "info@fusspflegebyyana.ch",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Kauffmannweg 14",
+          "postalCode": "6003",
+          "addressLocality": "Luzern",
+          "addressCountry": "CH"
+        },
+        "openingHoursSpecification": [
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday"], "opens": "10:00", "closes": "19:00" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "11:00", "closes": "20:00" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "10:00", "closes": "19:00" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "17:00" }
+        ]
+      }
+    </script>
+  </Fragment>
+
   <!-- Performance: Preconnect to external domains -->
   <link rel="preconnect" href="https://res.cloudinary.com">
   <link rel="preconnect" href="https://static.wixstatic.com">
@@ -27,7 +58,7 @@ import Layout from '../layouts/Layout.astro';
     .font-swiss-body { font-family: 'Source Sans Pro', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
     
     /* Elegant (Instagram-style Didot/Bodoni) font for headlines */
-    .font-luxury { font-family: 'Didot', 'Bodoni Moda', 'Bodoni 72', 'Bodoni MT', 'GFS Didot', 'Playfair Display', serif; font-weight: 600; }
+    .font-luxury { font-family: 'Didot', 'Bodoni Moda', 'Bodoni 72', 'Bodoni MT', 'GFS Didot', 'Playfair Display', serif; font-weight: 600; hyphens: manual; -webkit-hyphens: manual; }
     
     /* Animation optimization */
     .fade-in-section { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
@@ -35,6 +66,13 @@ import Layout from '../layouts/Layout.astro';
     
     /* Hero section critical styles */
     .hero-gradient { background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%); }
+    .hero-section { height: 100vh; height: 100svh; }
+
+    /* Review fan: on phones only the front card is shown and it never exceeds the viewport */
+    @media (max-width: 639px) {
+      .review-card { width: min(24rem, calc(100vw - 2rem)); }
+      .review-card:not([data-front]) { display: none; }
+    }
   </style>
   <!-- Navigation -->
   <nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 fade-in-section">
@@ -54,31 +92,31 @@ import Layout from '../layouts/Layout.astro';
         </div>
         
         <!-- Center Content Container -->
-        <div class="hidden md:flex items-center justify-center flex-1 max-w-4xl mx-auto">
+        <div class="hidden lg:flex items-center justify-center flex-1 max-w-4xl mx-auto">
           <!-- Desktop Navigation -->
           <div class="flex items-center space-x-1 bg-gray-100 rounded-full p-1">
-            <a href="#hero" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-orange-500 text-white shadow-sm">HOME</a>
-            <a href="#about" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">ÜBER UNS</a>
-            <a href="#services" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">FUSSPFLEGE & MANIKÜRE</a>
-            <a href="#reviews" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">BEWERTUNGEN</a>
-            <button id="gutscheine-btn" class="nav-pill px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900 cursor-pointer">GUTSCHEINE</button>
+            <a href="#hero" class="nav-pill whitespace-nowrap px-4 xl:px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-orange-500 text-white shadow-sm">HOME</a>
+            <a href="#about" class="nav-pill whitespace-nowrap px-4 xl:px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">ÜBER UNS</a>
+            <a href="#services" class="nav-pill whitespace-nowrap px-4 xl:px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">FUSSPFLEGE & MANIKÜRE</a>
+            <a href="#reviews" class="nav-pill whitespace-nowrap px-4 xl:px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900">BEWERTUNGEN</a>
+            <button id="gutscheine-btn" class="nav-pill whitespace-nowrap px-4 xl:px-6 py-3 rounded-full font-light text-sm transition-all duration-300 bg-transparent text-gray-600 hover:text-gray-900 cursor-pointer">GUTSCHEINE</button>
           </div>
         </div>
         
         <!-- Right Side Button -->
-        <div class="hidden md:flex flex-shrink-0">
+        <div class="hidden lg:flex flex-shrink-0">
           <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
-             target="_blank"
-             class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm">
+             target="_blank" rel="noopener"
+             class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm whitespace-nowrap">
             Termin vereinbaren
           </a>
         </div>
         
         <!-- Mobile menu button -->
-        <div class="md:hidden">
+        <div class="lg:hidden">
           <button id="mobile-menu-button" 
-                  class="text-gray-700 hover:text-gray-900"
-                  aria-label="Mobile navigation menu"
+                  class="text-gray-700 hover:text-gray-900 p-2.5 -mr-2.5"
+                  aria-label="Navigationsmenü öffnen oder schliessen"
                   aria-expanded="false">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -88,15 +126,15 @@ import Layout from '../layouts/Layout.astro';
       </div>
       
       <!-- Mobile Navigation -->
-      <div id="mobile-menu" class="md:hidden hidden pb-4">
+      <div id="mobile-menu" class="lg:hidden hidden pb-4">
         <div class="flex flex-col space-y-1 bg-gray-50 rounded-2xl p-3">
-          <a href="#hero" class="nav-pill-mobile active px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-orange-500 text-white mobile-nav-link">HOME</a>
-          <a href="#about" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">ÜBER UNS</a>
-          <a href="#services" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">FUSSPFLEGE & MANIKÜRE</a>
-          <a href="#reviews" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">BEWERTUNGEN</a>
-          <button id="gutscheine-btn-mobile" class="nav-pill-mobile px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link w-full text-left">GUTSCHEINE</button>
+          <a href="#hero" class="nav-pill-mobile active px-4 py-3 rounded-full font-medium text-sm transition-all duration-300 bg-orange-500 text-white mobile-nav-link">HOME</a>
+          <a href="#about" class="nav-pill-mobile px-4 py-3 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">ÜBER UNS</a>
+          <a href="#services" class="nav-pill-mobile px-4 py-3 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">FUSSPFLEGE & MANIKÜRE</a>
+          <a href="#reviews" class="nav-pill-mobile px-4 py-3 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link">BEWERTUNGEN</a>
+          <button id="gutscheine-btn-mobile" class="nav-pill-mobile px-4 py-3 rounded-full font-medium text-sm transition-all duration-300 bg-gray-100 text-gray-700 hover:bg-gray-200 mobile-nav-link w-full text-left">GUTSCHEINE</button>
           <div class="pt-2 border-t border-gray-200 mt-1">
-            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" target="_blank" class="bg-white hover:bg-orange-50 text-orange-500 px-4 py-2.5 rounded-full font-medium text-sm transition-all duration-300 text-center block mobile-nav-link border border-orange-500 hover:border-2 hover:border-orange-600">
+            <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" target="_blank" rel="noopener" class="bg-white hover:bg-orange-50 text-orange-500 px-4 py-3 rounded-full font-medium text-sm transition-all duration-300 text-center block mobile-nav-link border border-orange-500 hover:border-2 hover:border-orange-600">
               Termin buchen
             </a>
           </div>
@@ -105,14 +143,19 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </nav>
 
+  <main id="main">
   <!-- Hero Section -->
-  <section id="hero" class="relative h-screen overflow-hidden pt-16 sm:pt-20">
+  <section id="hero" class="hero-section relative h-screen overflow-hidden pt-16 sm:pt-20">
     <!-- Full Banner Background Image -->
     <div class="absolute inset-0">
       <picture>
         <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto/v1761811378/WhatsApp_Image_2025-10-30_at_05.38.23_x3lscx.webp" type="image/webp">
         <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/v1761811378/WhatsApp_Image_2025-10-30_at_05.38.23_x3lscx.jpg" 
              alt="Professional nail care and foot care treatment" 
+             width="5120"
+             height="3840"
+             fetchpriority="high"
+             decoding="async"
              class="w-full h-full object-cover">
       </picture>
       <!-- Lighter greyish overlay for better text readability -->
@@ -133,8 +176,8 @@ import Layout from '../layouts/Layout.astro';
         </p>
       
         <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
-           target="_blank"
-           class="btn-primary inline-block bg-white hover:bg-orange-50 text-orange-500 font-swiss-body font-medium text-xs xs:text-sm sm:text-base px-4 xs:px-6 sm:px-8 py-2 xs:py-3 sm:py-4 rounded-full transition-all duration-300 animate-fade-in-up border border-orange-500 hover:border-2 hover:border-orange-600 shadow-lg"
+           target="_blank" rel="noopener"
+           class="btn-primary inline-block bg-white hover:bg-orange-50 text-orange-500 font-swiss-body font-medium text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 min-h-[44px] rounded-full transition-all duration-300 animate-fade-in-up border border-orange-500 hover:border-2 hover:border-orange-600 shadow-lg"
            style="animation-delay: 0.4s;">
           Jetzt Termin buchen
         </a>
@@ -195,7 +238,7 @@ import Layout from '../layouts/Layout.astro';
               
               <p class="text-base sm:text-lg">
                 Wir möchten, dass Sie sich während Ihrer Behandlung rundum wohl und sicher fühlen.
-                Deshalb bereiten wir für jede Kundin und jeden Kunden ein frisch desinfiziertes Behandlungssset vor – bestehend aus Zangen, Fräsen, Schleifkappen und weiteren Instrumenten. Diese werden nach jeder Anwendung sorgfältig im <strong class="text-orange-600">HYDRIM-Thermodesinfektor</strong> gereinigt.
+                Deshalb bereiten wir für jede Kundin und jeden Kunden ein frisch desinfiziertes Behandlungsset vor – bestehend aus Zangen, Fräsen, Schleifkappen und weiteren Instrumenten. Diese werden nach jeder Anwendung sorgfältig im <strong class="text-orange-700">HYDRIM-Thermodesinfektor</strong> gereinigt.
               </p>
               
               <p class="text-base sm:text-lg">
@@ -314,24 +357,24 @@ import Layout from '../layouts/Layout.astro';
             </div>
             
             <div>
-              <div class="bg-white/20 backdrop-blur-md rounded-lg p-4 mb-6">
+              <div class="bg-white/80 backdrop-blur-md rounded-lg p-4 mb-6">
               <div class="space-y-2 text-sm">
-                <div class="flex justify-between">
-                    <span class="text-gray-800">Kosmetische Fusspflege</span>
-                    <span class="font-semibold text-gray-800">CHF 100</span>
+                <div class="flex justify-between items-baseline gap-3">
+                    <span class="min-w-0 text-gray-900">Kosmetische Fusspflege</span>
+                    <span class="font-semibold text-gray-900 whitespace-nowrap flex-shrink-0">CHF 100</span>
                 </div>
-                <div class="flex justify-between">
-                    <span class="text-gray-800">mit Peeling & Fussbad</span>
-                    <span class="font-semibold text-gray-800">ab CHF 125</span>
+                <div class="flex justify-between items-baseline gap-3">
+                    <span class="min-w-0 text-gray-900">mit Peeling & Fussbad</span>
+                    <span class="font-semibold text-gray-900 whitespace-nowrap flex-shrink-0">ab CHF 125</span>
                 </div>
-                <div class="flex justify-between">
-                    <span class="text-gray-800">inkl. Gellack</span>
-                    <span class="font-semibold text-gray-800">ab CHF 130</span>
+                <div class="flex justify-between items-baseline gap-3">
+                    <span class="min-w-0 text-gray-900">inkl. Gellack</span>
+                    <span class="font-semibold text-gray-900 whitespace-nowrap flex-shrink-0">ab CHF 130</span>
                 </div>
               </div>
             </div>
               <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
-                 target="_blank"
+                 target="_blank" rel="noopener"
                  class="inline-flex items-center bg-white hover:bg-orange-50 text-orange-500 px-6 py-3 rounded-full font-semibold transition-all duration-300 border border-orange-500 hover:border-2 hover:border-orange-600">
               Termin buchen
               <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -370,24 +413,24 @@ import Layout from '../layouts/Layout.astro';
             </div>
             
             <div>
-              <div class="bg-white/20 backdrop-blur-md rounded-lg p-4 mb-4">
+              <div class="bg-white/80 backdrop-blur-md rounded-lg p-4 mb-6">
               <div class="space-y-2 text-sm">
-                <div class="flex justify-between">
-                    <span class="text-gray-800">Maniküre</span>
-                    <span class="font-semibold text-gray-800">CHF 75</span>
+                <div class="flex justify-between items-baseline gap-3">
+                    <span class="min-w-0 text-gray-900">Maniküre</span>
+                    <span class="font-semibold text-gray-900 whitespace-nowrap flex-shrink-0">CHF 75</span>
                 </div>
-                <div class="flex justify-between">
-                    <span class="text-gray-800">inkl. normaler Nagellack</span>
-                    <span class="font-semibold text-gray-800">CHF 90</span>
+                <div class="flex justify-between items-baseline gap-3">
+                    <span class="min-w-0 text-gray-900">inkl. normaler Nagellack</span>
+                    <span class="font-semibold text-gray-900 whitespace-nowrap flex-shrink-0">CHF 90</span>
                 </div>
-                <div class="flex justify-between">
-                    <span class="text-gray-800">inkl. Gellack (OPI)</span>
-                    <span class="font-semibold text-gray-800">CHF 100</span>
+                <div class="flex justify-between items-baseline gap-3">
+                    <span class="min-w-0 text-gray-900">inkl. Gellack (OPI)</span>
+                    <span class="font-semibold text-gray-900 whitespace-nowrap flex-shrink-0">CHF 100</span>
                 </div>
               </div>
             </div>
               <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
-                 target="_blank"
+                 target="_blank" rel="noopener"
                  class="inline-flex items-center bg-white hover:bg-orange-50 text-orange-500 px-6 py-3 rounded-full font-semibold transition-all duration-300 border border-orange-500 hover:border-2 hover:border-orange-600">
               Termin buchen
               <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -430,7 +473,10 @@ import Layout from '../layouts/Layout.astro';
       <picture>
         <source srcset="https://res.cloudinary.com/dihw9b8ce/image/upload/f_webp,q_auto/v1758118278/IMG_9174_avqbll.jpg" type="image/webp">
         <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/v1758118278/IMG_9174_avqbll.jpg" 
-             alt="Team background" 
+             alt="" 
+             width="1002"
+             height="564"
+             loading="lazy"
              class="w-full h-full object-cover">
       </picture>
       <!-- Light overlay for better text readability -->
@@ -577,7 +623,7 @@ import Layout from '../layouts/Layout.astro';
                 sizes="100vw"
                 type="image/webp">
         <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_1920,h_960,f_webp,q_80/v1758107007/a-clean-luxury-editorial-photograph-show_4TEXiZVrQtCoFkjgu5kqKA_iCUF29uHTp-svv8760VT0w_yrqk8a.webp" 
-             alt="Luxury editorial background" 
+             alt="" 
              width="1920"
              height="960"
              loading="lazy"
@@ -587,7 +633,7 @@ import Layout from '../layouts/Layout.astro';
     </div>
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center mb-20">
-        <h2 class="font-luxury text-4xl sm:text-5xl lg:text-6xl mb-6 text-black leading-relaxed" style="font-weight: 600;">
+        <h2 class="font-luxury text-[2rem] min-[390px]:text-4xl sm:text-5xl lg:text-6xl mb-6 text-black leading-relaxed" style="font-weight: 600;">
           Kundenbewertungen
         </h2>
         <div class="w-24 h-1 bg-orange-500 mx-auto"></div>
@@ -652,6 +698,7 @@ import Layout from '../layouts/Layout.astro';
         <!-- Review Card 3 (Center/Front) -->
         <div class="review-card absolute w-96 h-96 bg-white rounded-2xl shadow-2xl p-8 transform transition-all duration-700 ease-out opacity-0 translate-y-8" 
              style="transform: rotate(0deg) translateX(0px) translateY(0px); z-index: 3;"
+             data-front
              data-delay="400">
           <div class="h-full flex flex-col justify-between">
             <div>
@@ -738,7 +785,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
         
         <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
-           target="_blank"
+           target="_blank" rel="noopener"
            class="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 group">
           <svg class="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
@@ -779,7 +826,7 @@ import Layout from '../layouts/Layout.astro';
               und bleiben Sie in Verbindung mit unserem Studio und unseren aktuellen Angeboten.
             </div>
             <a href="https://www.instagram.com/fusspflege_by_yana?igsh=ZDBhMXgwcXh2Y280" 
-               target="_blank"
+               target="_blank" rel="noopener"
                class="inline-flex items-center bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 text-white font-swiss-body font-bold px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
               <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
@@ -792,7 +839,7 @@ import Layout from '../layouts/Layout.astro';
           <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mt-6">
             <!-- Photo 1 -->
             <a href="https://www.instagram.com/p/DJfYMHOqzb2/?igsh=MWF2Yzh6YmIzMnZ5ZA==" 
-               target="_blank" 
+               target="_blank" rel="noopener" 
                class="aspect-square rounded-lg overflow-hidden hover:opacity-80 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
               <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_200,h_200,f_webp,q_auto/v1758111563/IMG_9167_fiioto.jpg" 
                    srcset="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_150,h_150,f_webp,q_auto/v1758111563/IMG_9167_fiioto.jpg 150w,
@@ -807,7 +854,7 @@ import Layout from '../layouts/Layout.astro';
             
             <!-- Photo 2 -->
             <a href="https://www.instagram.com/p/C2iEFbYKaY8/?igsh=MW5vNWFvdmdtNTZxcQ==" 
-               target="_blank" 
+               target="_blank" rel="noopener" 
                class="aspect-square rounded-lg overflow-hidden hover:opacity-80 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
               <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_200,h_200,f_webp,q_auto/v1758111595/IMG_9170_b2qc1t.jpg" 
                    srcset="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_150,h_150,f_webp,q_auto/v1758111595/IMG_9170_b2qc1t.jpg 150w,
@@ -822,7 +869,7 @@ import Layout from '../layouts/Layout.astro';
             
             <!-- Photo 3 -->
             <a href="https://www.instagram.com/p/B6c-peBFihm/?igsh=MWkzZ2VjZzFhc2Jkaw==" 
-               target="_blank" 
+               target="_blank" rel="noopener" 
                class="aspect-square rounded-lg overflow-hidden hover:opacity-80 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
               <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_200,h_200,f_webp,q_auto/v1758111612/IMG_9171_lspoqt.jpg" 
                    srcset="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_150,h_150,f_webp,q_auto/v1758111612/IMG_9171_lspoqt.jpg 150w,
@@ -837,7 +884,7 @@ import Layout from '../layouts/Layout.astro';
             
             <!-- Photo 4 -->
             <a href="https://www.instagram.com/p/DCXpelsKg5c/?igsh=MWtweGE5NDM1cXlocg==" 
-               target="_blank" 
+               target="_blank" rel="noopener" 
                class="aspect-square rounded-lg overflow-hidden hover:opacity-80 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
               <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_200,h_200,f_webp,q_auto/v1758111585/IMG_9169_agrafl.jpg" 
                    srcset="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_150,h_150,f_webp,q_auto/v1758111585/IMG_9169_agrafl.jpg 150w,
@@ -852,7 +899,7 @@ import Layout from '../layouts/Layout.astro';
             
             <!-- Photo 5 -->
             <a href="https://www.instagram.com/p/DHO3xeEKvMy/?igsh=MThteWo5ODYzN2RkNw==" 
-               target="_blank" 
+               target="_blank" rel="noopener" 
                class="aspect-square rounded-lg overflow-hidden hover:opacity-80 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
               <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_200,h_200,f_webp,q_auto/v1758111573/IMG_9168_mrkhjp.jpg" 
                    srcset="https://res.cloudinary.com/dihw9b8ce/image/upload/c_fill,w_150,h_150,f_webp,q_auto/v1758111573/IMG_9168_mrkhjp.jpg 150w,
@@ -894,6 +941,8 @@ import Layout from '../layouts/Layout.astro';
               <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220130/PHOTO-2025-03-23-12-49-27_ifwjqo.webp" type="image/webp">
               <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220130/PHOTO-2025-03-23-12-49-27_ifwjqo.jpg" 
                    alt="Studio Galerie 1" 
+                   width="250"
+                   height="250"
                    class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
                    loading="lazy">
             </picture>
@@ -907,6 +956,8 @@ import Layout from '../layouts/Layout.astro';
               <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220129/PHOTO-2025-03-23-12-49-27_3_1_f4llxc.webp" type="image/webp">
               <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220129/PHOTO-2025-03-23-12-49-27_3_1_f4llxc.jpg" 
                    alt="Studio Galerie 2" 
+                   width="250"
+                   height="250"
                    class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
                    loading="lazy">
             </picture>
@@ -920,6 +971,8 @@ import Layout from '../layouts/Layout.astro';
               <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220126/PHOTO-2025-03-23-12-49-26_6_1_stguub.webp" type="image/webp">
               <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220126/PHOTO-2025-03-23-12-49-26_6_1_stguub.jpg" 
                    alt="Studio Galerie 3" 
+                   width="250"
+                   height="250"
                    class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
                    loading="lazy">
             </picture>
@@ -933,6 +986,8 @@ import Layout from '../layouts/Layout.astro';
               <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220126/PHOTO-2025-03-23-12-49-27_1_1_g5n5av.webp" type="image/webp">
               <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220126/PHOTO-2025-03-23-12-49-27_1_1_g5n5av.jpg" 
                    alt="Studio Galerie 4" 
+                   width="250"
+                   height="250"
                    class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
                    loading="lazy">
             </picture>
@@ -946,6 +1001,8 @@ import Layout from '../layouts/Layout.astro';
               <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220124/PHOTO-2025-03-23-13-15-15_wycfbl.webp" type="image/webp">
               <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220124/PHOTO-2025-03-23-13-15-15_wycfbl.jpg" 
                    alt="Studio Galerie 5" 
+                   width="250"
+                   height="250"
                    class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
                    loading="lazy">
             </picture>
@@ -959,6 +1016,8 @@ import Layout from '../layouts/Layout.astro';
               <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220123/PHOTO-2025-03-23-13-13-17_v5mbmv.webp" type="image/webp">
               <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220123/PHOTO-2025-03-23-13-13-17_v5mbmv.jpg" 
                    alt="Studio Galerie 6" 
+                   width="250"
+                   height="250"
                    class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
                    loading="lazy">
             </picture>
@@ -972,6 +1031,8 @@ import Layout from '../layouts/Layout.astro';
               <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220122/PHOTO-2025-03-23-12-49-26_5_1_p2hgyr.webp" type="image/webp">
               <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220122/PHOTO-2025-03-23-12-49-26_5_1_p2hgyr.jpg" 
                    alt="Studio Galerie 7" 
+                   width="250"
+                   height="250"
                    class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
                    loading="lazy">
             </picture>
@@ -985,6 +1046,8 @@ import Layout from '../layouts/Layout.astro';
               <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220121/PHOTO-2025-03-23-12-49-26_4_1_eiraso.webp" type="image/webp">
               <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220121/PHOTO-2025-03-23-12-49-26_4_1_eiraso.jpg" 
                    alt="Studio Galerie 8" 
+                   width="250"
+                   height="250"
                    class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
                    loading="lazy">
             </picture>
@@ -998,6 +1061,8 @@ import Layout from '../layouts/Layout.astro';
               <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220120/PHOTO-2025-03-23-12-49-26_1_1_yuaiff.webp" type="image/webp">
               <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220120/PHOTO-2025-03-23-12-49-26_1_1_yuaiff.jpg" 
                    alt="Studio Galerie 9" 
+                   width="250"
+                   height="250"
                    class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
                    loading="lazy">
             </picture>
@@ -1011,6 +1076,8 @@ import Layout from '../layouts/Layout.astro';
               <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220120/PHOTO-2025-03-23-12-59-37_1_xjvf4w.webp" type="image/webp">
               <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220120/PHOTO-2025-03-23-12-59-37_1_xjvf4w.jpg" 
                    alt="Studio Galerie 10" 
+                   width="250"
+                   height="250"
                    class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
                    loading="lazy">
             </picture>
@@ -1024,6 +1091,8 @@ import Layout from '../layouts/Layout.astro';
               <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220120/PHOTO-2025-03-23-12-49-26_2_1_bgi2r0.webp" type="image/webp">
               <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220120/PHOTO-2025-03-23-12-49-26_2_1_bgi2r0.jpg" 
                    alt="Studio Galerie 11" 
+                   width="250"
+                   height="250"
                    class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
                    loading="lazy">
             </picture>
@@ -1037,6 +1106,8 @@ import Layout from '../layouts/Layout.astro';
               <source srcset="https://res.cloudinary.com/dphbnwjtx/image/upload/f_webp,q_auto,w_250,h_250,c_fill/v1761220121/PHOTO-2025-03-23-12-49-26_3_1_zoknwl.webp" type="image/webp">
               <img src="https://res.cloudinary.com/dphbnwjtx/image/upload/w_250,h_250,c_fill/v1761220121/PHOTO-2025-03-23-12-49-26_3_1_zoknwl.jpg" 
                    alt="Studio Galerie 12" 
+                   width="250"
+                   height="250"
                    class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
                    loading="lazy">
             </picture>
@@ -1061,9 +1132,9 @@ import Layout from '../layouts/Layout.astro';
               </h3>
               
               <!-- Contact Information in One Line -->
-              <div class="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-6 sm:gap-8 md:gap-12">
+              <div class="flex flex-col sm:flex-row flex-wrap justify-start sm:justify-center items-start sm:items-center gap-3 sm:gap-8 md:gap-12">
                 <!-- Address -->
-                <div class="flex items-center">
+                <div class="flex items-center min-h-[44px]">
                   <div class="flex-shrink-0 w-6 h-6 text-orange-500 mr-3">
                     <svg fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
@@ -1076,7 +1147,7 @@ import Layout from '../layouts/Layout.astro';
                 </div>
                 
                 <!-- Phone -->
-                <div class="flex items-center">
+                <div class="flex items-center min-h-[44px]">
                   <div class="flex-shrink-0 w-6 h-6 text-orange-500 mr-3">
                     <svg fill="currentColor" viewBox="0 0 24 24">
                       <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
@@ -1084,12 +1155,12 @@ import Layout from '../layouts/Layout.astro';
                   </div>
                   <div class="flex items-baseline gap-2 flex-wrap">
                     <h4 class="font-bold text-orange-500 text-sm">Telefon:</h4>
-                    <a href="tel:0798978891" class="text-gray-700 hover:text-orange-500 transition-colors text-sm">079 897 88 91</a>
+                    <a href="tel:0798978891" class="inline-flex items-center min-h-[44px] text-gray-700 hover:text-orange-500 transition-colors text-sm">079 897 88 91</a>
                   </div>
                 </div>
                 
                 <!-- Email -->
-                <div class="flex items-center">
+                <div class="flex items-center min-h-[44px]">
                   <div class="flex-shrink-0 w-6 h-6 text-orange-500 mr-3">
                     <svg fill="currentColor" viewBox="0 0 24 24">
                       <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
@@ -1097,7 +1168,7 @@ import Layout from '../layouts/Layout.astro';
                   </div>
                   <div class="flex items-baseline gap-2 flex-wrap">
                     <h4 class="font-bold text-orange-500 text-sm">E-Mail:</h4>
-                    <a href="mailto:info@fusspflegebyyana.ch" class="text-gray-700 hover:text-orange-500 transition-colors text-sm">info@fusspflegebyyana.ch</a>
+                    <a href="mailto:info@fusspflegebyyana.ch" class="inline-flex items-center min-h-[44px] text-gray-700 hover:text-orange-500 transition-colors text-sm">info@fusspflegebyyana.ch</a>
                   </div>
                 </div>
                 
@@ -1191,7 +1262,7 @@ import Layout from '../layouts/Layout.astro';
             <!-- CTA Button -->
             <div class="text-center mt-12">
               <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
-                 target="_blank"
+                 target="_blank" rel="noopener"
                  class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-swiss-body font-bold text-xl px-12 py-5 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                 Jetzt Termin buchen
               </a>
@@ -1202,6 +1273,7 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </section>
+  </main>
   <!-- Footer -->
   <footer class="bg-orange-200 py-20 relative overflow-hidden">
     <!-- Background Image -->
@@ -1209,7 +1281,10 @@ import Layout from '../layouts/Layout.astro';
       <picture>
         <source srcset="https://res.cloudinary.com/dihw9b8ce/image/upload/f_webp,q_auto/v1758118278/IMG_9174_avqbll.jpg" type="image/webp">
         <img src="https://res.cloudinary.com/dihw9b8ce/image/upload/v1758118278/IMG_9174_avqbll.jpg" 
-             alt="Footer background" 
+             alt="" 
+             width="1002"
+             height="564"
+             loading="lazy"
              class="w-full h-full object-cover">
       </picture>
       <!-- Orange overlay to maintain footer styling -->
@@ -1249,8 +1324,8 @@ import Layout from '../layouts/Layout.astro';
             
             <div class="space-y-6">
               <h3 class="text-2xl font-bold text-gray-900 mb-6">Kontakt</h3>
-              <div class="space-y-4">
-                <h4 class="font-semibold text-gray-900 text-lg">Fusspflege by Yana</h4>
+              <div class="space-y-1">
+                <h4 class="font-semibold text-gray-900 text-lg mb-2">Fusspflege by Yana</h4>
                 
                 <div class="flex items-start text-gray-600">
                   <svg class="w-6 h-6 mr-4 mt-1 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
@@ -1262,18 +1337,18 @@ import Layout from '../layouts/Layout.astro';
                   </div>
                 </div>
                 
-                <div class="flex items-center text-gray-600">
+                <div class="flex items-center min-h-[44px] text-gray-600">
                   <svg class="w-6 h-6 mr-4 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                   </svg>
-                  <a href="tel:0798978891" class="hover:text-orange-500 transition-colors font-medium">079 897 88 91</a>
+                  <a href="tel:0798978891" class="inline-flex items-center min-h-[44px] hover:text-orange-500 transition-colors font-medium">079 897 88 91</a>
                 </div>
                 
-                <div class="flex items-center text-gray-600">
+                <div class="flex items-center min-h-[44px] text-gray-600">
                   <svg class="w-6 h-6 mr-4 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                   </svg>
-                  <a href="mailto:info@fusspflegebyyana.ch" class="hover:text-orange-500 transition-colors font-medium">info@fusspflegebyyana.ch</a>
+                  <a href="mailto:info@fusspflegebyyana.ch" class="inline-flex items-center min-h-[44px] hover:text-orange-500 transition-colors font-medium">info@fusspflegebyyana.ch</a>
                 </div>
                 
                 <!-- Parking Information -->
@@ -1290,21 +1365,21 @@ import Layout from '../layouts/Layout.astro';
             <!-- Navigation Section -->
             <div class="space-y-6">
               <h3 class="text-2xl font-bold text-gray-900 mb-6">Navigation</h3>
-              <nav class="space-y-4">
-                <a href="#about" class="block text-gray-600 hover:text-orange-500 transition-colors font-medium">Über Uns</a>
-                <a href="#services" class="block text-gray-600 hover:text-orange-500 transition-colors font-medium">Fusspflege & Maniküre</a>
-                <a href="#reviews" class="block text-gray-600 hover:text-orange-500 transition-colors font-medium">Bewertungen</a>
-                <a href="#contact" class="block text-gray-600 hover:text-orange-500 transition-colors font-medium">Kontakt</a>
+              <nav class="space-y-0.5">
+                <a href="#about" class="block py-2.5 text-gray-600 hover:text-orange-500 transition-colors font-medium">Über Uns</a>
+                <a href="#services" class="block py-2.5 text-gray-600 hover:text-orange-500 transition-colors font-medium">Fusspflege & Maniküre</a>
+                <a href="#reviews" class="block py-2.5 text-gray-600 hover:text-orange-500 transition-colors font-medium">Bewertungen</a>
+                <a href="#contact" class="block py-2.5 text-gray-600 hover:text-orange-500 transition-colors font-medium">Kontakt</a>
                 <a href="https://booking.localsearch.ch/bookings/fusspflege-by-yana/services?locale=de-CH" 
-                   target="_blank" 
-                   class="block text-gray-600 hover:text-orange-500 transition-colors font-medium">Termin buchen</a>
+                   target="_blank" rel="noopener" 
+                   class="block py-2.5 text-gray-600 hover:text-orange-500 transition-colors font-medium">Termin buchen</a>
               </nav>
               
               <!-- Social Media -->
               <div class="mt-8">
                 <div class="flex space-x-4">
                   <a href="https://www.instagram.com/fusspflege_by_yana?igsh=ZDBhMXgwcXh2Y280" 
-                     target="_blank" 
+                     target="_blank" rel="noopener" 
                      aria-label="Follow us on Instagram @fusspflege_by_yana"
                      class="w-12 h-12 bg-gray-100 hover:bg-orange-500 rounded-xl flex items-center justify-center transition-all duration-300 group shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                     <svg class="w-6 h-6 text-gray-600 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -1322,12 +1397,12 @@ import Layout from '../layouts/Layout.astro';
             <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0 text-center sm:text-left">
               <p class="text-gray-500 text-sm">
                 © 2025 Fusspflege by Yana. Alle Rechte vorbehalten.<br/>
-                <span class="text-xs text-gray-400">Website by <a href="https://loaded.ch" target="_blank" rel="noopener noreferrer" class="hover:text-orange-500 transition-colors underline">loaded.ch</a></span>
+                <span class="text-xs text-gray-600">Website by <a href="https://loaded.ch" target="_blank" rel="noopener noreferrer" class="inline-block py-3 -my-3 hover:text-orange-500 transition-colors underline">loaded.ch</a></span>
               </p>
-              <div class="flex space-x-6 text-sm text-gray-500">
-                <a href="/datenschutz" class="hover:text-orange-500 transition-colors">Datenschutz</a>
-                <a href="/impressum" class="hover:text-orange-500 transition-colors">Impressum</a>
-                <a href="/agb" class="hover:text-orange-500 transition-colors">AGB</a>
+              <div class="flex space-x-2 text-sm text-gray-500">
+                <a href="/datenschutz" class="inline-flex items-center min-h-[44px] px-2 hover:text-orange-500 transition-colors">Datenschutz</a>
+                <a href="/impressum" class="inline-flex items-center min-h-[44px] px-2 hover:text-orange-500 transition-colors">Impressum</a>
+                <a href="/agb" class="inline-flex items-center min-h-[44px] px-2 hover:text-orange-500 transition-colors">AGB</a>
               </div>
             </div>
           </div>
@@ -1338,12 +1413,12 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- Gutscheine Modal -->
   <div id="gutscheine-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto" role="dialog" aria-modal="true" aria-label="Gutschein bestellen">
       <!-- Modal Header -->
       <div class="bg-orange-500 text-white p-6 rounded-t-2xl">
         <div class="flex justify-between items-center">
           <h2 class="text-2xl font-bold">Gutschein bestellen</h2>
-          <button id="close-modal" class="text-white hover:text-gray-200 text-2xl font-bold">
+          <button id="close-modal" type="button" aria-label="Schliessen" class="text-white hover:text-gray-200 text-2xl font-bold w-11 h-11 flex items-center justify-center -mr-2">
             ×
           </button>
         </div>
@@ -1397,8 +1472,8 @@ import Layout from '../layouts/Layout.astro';
           </div>
 
           <div>
-            <label for="email" class="block text-sm font-semibold text-gray-900 mb-2">E-Mail *</label>
-            <input type="email" id="email" name="email" required 
+            <label for="gutschein-email" class="block text-sm font-semibold text-gray-900 mb-2">E-Mail *</label>
+            <input type="email" id="gutschein-email" name="email" required 
                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors">
           </div>
 
@@ -1432,9 +1507,9 @@ import Layout from '../layouts/Layout.astro';
           <!-- Terms & Conditions -->
           <div class="flex items-start space-x-3">
             <input type="checkbox" id="agb_accepted" name="agb_accepted" required 
-                   class="mt-1 h-4 w-4 text-orange-500 focus:ring-orange-500 border-gray-300 rounded">
+                   class="mt-0.5 h-5 w-5 flex-shrink-0 text-orange-500 focus:ring-orange-500 border-gray-300 rounded">
             <label for="agb_accepted" class="text-sm text-gray-700 leading-relaxed">
-              Ich akzeptiere die <a href="/agb" target="_blank" class="text-orange-500 hover:text-orange-600 underline">Allgemeinen Geschäftsbedingungen</a> und die <a href="/datenschutz" target="_blank" class="text-orange-500 hover:text-orange-600 underline">Datenschutzerklärung</a> *
+              Ich akzeptiere die <a href="/agb" target="_blank" rel="noopener" class="text-orange-500 hover:text-orange-600 underline">Allgemeinen Geschäftsbedingungen</a> und die <a href="/datenschutz" target="_blank" rel="noopener" class="text-orange-500 hover:text-orange-600 underline">Datenschutzerklärung</a> *
             </label>
           </div>
 
@@ -1571,7 +1646,7 @@ import Layout from '../layouts/Layout.astro';
           this.loadingElement.innerHTML = `
             <div class="text-center py-8">
               <p class="text-gray-500 mb-4">Unable to load Instagram photos</p>
-              <a href="https://www.instagram.com/fusspflege_by_yana" target="_blank" 
+              <a href="https://www.instagram.com/fusspflege_by_yana" target="_blank" rel="noopener" 
                  class="text-orange-500 hover:text-orange-600 font-medium">
                 View on Instagram →
               </a>
@@ -1807,6 +1882,11 @@ import Layout from '../layouts/Layout.astro';
         });
       }
 
+      // Arriving via /#gutscheine (e.g. from the navigation on the treatments page)
+      if (window.location.hash === '#gutscheine') {
+        openModal();
+      }
+
       // Event listeners for opening modal
       if (gutscheineBtn) {
         gutscheineBtn.addEventListener('click', openModal);
@@ -1970,13 +2050,8 @@ import Layout from '../layouts/Layout.astro';
       }
       
       #hero p {
-        font-size: 0.75rem !important;
+        font-size: 0.875rem !important;
         line-height: 1.3;
-      }
-      
-      .btn-primary {
-        font-size: 0.75rem !important;
-        padding: 0.5rem 1rem !important;
       }
     }
 
